@@ -12,30 +12,45 @@ h3{
 label span{
     color:#C71585;
 }
+div{
+  padding-bottom: 0px;
+}
 .hp{
   display: inline-block;
 }
 #sign{
   color:#C71585;
 }
+
 #already{
   margin-left:0px;
-    display:inline-block;
+  display:inline-block;
 }
 #conBorder{
-  border: 1px solid black;
+  border: 1px solid #DCDCDC;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #d{
   padding-right: 0px;
 }
 #image{
-    position: relative;
-     filter: brightness(50%);
-     background-repeat: no-repeat;
+  position: relative;
+  filter: brightness(50%);
+  background-repeat: no-repeat;
+ }
+ small{
+  padding-top: 0px;
+ }
+ #already{
+  padding-top: 0px;
  }
 .inside{
-  padding: 5px;
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+
 }
 h2.texth2{
    color:white; 
@@ -56,9 +71,18 @@ p.texth2{
     color: white;
     border:none;
 }
-.btn-default{
-   background: #3B5998;
-   color:white;
-   width:100%;
+#fb{
+  padding-top: 0px;
+   width:230px;
+   height: 30px;
+  
+}
+.col-md-6{
+  padding-right: 35px;
+}
+#input-submit{
+ padding-top: 5px;
+ padding-right: 40px;
+ width:96.5%; 
 }
 

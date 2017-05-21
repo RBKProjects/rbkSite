@@ -8,16 +8,33 @@ import { AuthService } from '../home/user/service/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit{
     public userAccessTest:any;
+           flage=true;
   constructor(private router: Router , private auth : AuthService ) { 
-  this.userAccessTest=this.auth.userLoginTest()
+  
 }
 
   ngOnInit() {
   }
   callSignup(){
+  	this.flage=false;
     this.router.navigate(['/signup']);
   }
-  
+
+  testUser(){
+  console.log(localStorage.getItem('id_token'))
+      if(localStorage.getItem('id_token').length){
+        return true
+      }
+      else{
+        return false
+      }
+   }
+
+   logOut(){
+   	this.flage=true;
+   	 this.auth.logout();
+   	 this.router.navigate(['/signin']);
+   }
 }

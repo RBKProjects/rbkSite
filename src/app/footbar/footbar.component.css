@@ -33,6 +33,7 @@ p{
 }
 small{
   color:#F0F0F0;
+  padding-right: 60px;
 }
 #last{
   left:30%;
@@ -43,13 +44,20 @@ background-color: #C71585;
 min-height:200px;
 min-width:150px
 }
-hr{
-  color:#F0F0F0;
+#hr{
+   border-top: 1px solid #DCDCDC;
+}
+.ri{
+  padding-left: 20px;
+}
+#ri{
+  padding-top: 7px;
 }
 #foot{
- border: 1px solid #F0F0F0;
- background:#b31277 !important; 
- padding-left: 30px;  
+   border:1px solid;
+   border-top-color: #DCDCDC;
+   background:#b31277 !important; 
+   padding-left: 30px;  
 }
 input[type=submit]:focus {
   border-size:2px;
@@ -57,7 +65,7 @@ input[type=submit]:focus {
 }
 input[type="submit"], textarea {
   padding-top: 2px;
-  border: 2px solid white;
+  border: 2px solid #DCDCDC;
   color:white;
   background-color : #C71585;
 }

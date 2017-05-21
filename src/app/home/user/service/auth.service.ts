@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class AuthService {
-  public userToken:any;
+  public userToken="x";
 
   constructor(private http : Http , private fb : FacebookService ) { }
 
@@ -32,7 +32,7 @@ export class AuthService {
     }
 
     facebookLogin(user){
-
+     console.log(user)
     let headers = new Headers();
     headers.append('Content-Type','application/json'); //add the type of data to the header...
     return this.http.post('api/user/facebookLogin', user, {headers: headers})
@@ -61,5 +61,15 @@ export class AuthService {
       return this.http.post('api/update/'+ params, user, {headers: headers})
       .map(res => res.json());
      }
+
+   userLoginTest(){
+     console.log(localStorage.getItem('id_token'))
+      if(localStorage.getItem('id_token').length){
+        return true
+      }
+      else{
+        return false
+      }
+    }
 
 }

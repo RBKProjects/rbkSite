@@ -15,9 +15,8 @@
           <div id="d">
            <div class="col-md-6">
              <div class="inside">
-               <br>
                 <h3>Create Acount</h3>
-                 <div class="col-md-12">
+                 <div class="col-md-12" id="already">
                   <form class="form-inline" >
                      <div class="form-group">
                          <label id="already"><small>Already have an account?</small></label>
@@ -32,7 +31,7 @@
                       <label >First name <span>*</span></label>
                       <input type="text" class="form-control" id="input" placeholder="First Name" formControlName="firstName">
                       <div class='form-text error' *ngIf='registerForm.controls.firstName.touched'>
-                      <div *ngIf="registerForm.controls.firstName.hasError('required')">First name is required.</div>
+                      <div *ngIf="registerForm.controls.firstName.hasError('required')"><small>First name is required.</small></div>
                      </div>
                     </div>
                    </div>
@@ -41,7 +40,7 @@
                     <label >Last name <span>*</span></label>
                      <input type="text" class="form-control" id="input" placeholder="Last Name" formControlName="lastName">
                      <div class='form-text error' *ngIf='registerForm.controls.lastName.touched'>
-                     <div *ngIf="registerForm.controls.lastName.hasError('required')">Last name is required.</div>
+                     <div *ngIf="registerForm.controls.lastName.hasError('required')"><span>Last name is required.</span></div>
                       </div>
                    </div>
                   </div>
@@ -52,8 +51,8 @@
                      <label >Email <span>*</span></label>
                      <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
                      <div class="form-text error" *ngIf="registerForm.controls.email.touched">
-                     <div *ngIf="registerForm.controls.email.hasError('required')">Email is required.</div>
-                     <div *ngIf="registerForm.controls.email.hasError('invalidEmail')">Email is invalid.</div>
+                     <div *ngIf="registerForm.controls.email.hasError('required')"><small>Email is required.</small></div>
+                     <div *ngIf="registerForm.controls.email.hasError('invalidEmail')"><small>Email is invalid.</small></div>
                      </div>
                     </div>
                    </div>
@@ -62,7 +61,7 @@
                     <label >Confirm Email <span>*</span></label>
                     <input type="email" class="form-control" placeholder="Comfirm your email"  formControlName="conEmail">
                     <div class='form-text error' *ngIf="registerForm.controls.conEmail.touched">
-                    <div *ngIf="registerForm.hasError('mismatched')">Emails do not match.</div>
+                    <div *ngIf="registerForm.hasError('mismatched')"><small>Emails do not match.</small></div>
                     </div>
                   </div>
                  </div>
@@ -73,8 +72,8 @@
                       <label >Password <span>*</span></label>
                       <input type="password" class="form-control"  placeholder="Password" minlength='6' formControlName="password">
                       <div class='form-text error' *ngIf="registerForm.controls.password.touched">
-                      <div *ngIf="registerForm.controls.password.hasError('required')">Password is required.</div>
-                      <div *ngIf="registerForm.controls.password.hasError('minlength')">Password isn't long enough.</div>
+                      <div *ngIf="registerForm.controls.password.hasError('required')"><small>Password is required.</small></div>
+                      <div *ngIf="registerForm.controls.password.hasError('minlength')"><small>Password isn't long enough.</small></div>
                       </div>
                     </div>
                   </div>
@@ -83,7 +82,7 @@
                         <label >Confirm Password <span>*</span></label>
                         <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword">
                         <div class='form-text error' *ngIf="registerForm.controls.confirmPassword.touched">
-                        <div *ngIf="registerForm.hasError('mismatchedpass')">Passwords do not match.</div>
+                        <div *ngIf="registerForm.hasError('mismatchedpass')"><small>Passwords do not match.</small></div>
                         </div>
                       </div>
                     </div>
@@ -93,9 +92,9 @@
                     <div class="col-md-12">
                      <div class="col-md-6"><h5>Sign up with one click</h5></div>
                       <div class="col-md-6">
-                       <button class="btn btn-default" (click)="fbLogin()">
-                       <img src="http://i.stack.imgur.com/e2S63.png" width="20" /> Sign In with Facebook
-                        </button>
+                       <a>
+                       <img id="fb" src="assets/Screen Shot 2017-05-14 at 3.53.18 PM.png" /> 
+                        </a>
                       </div>
                     </div>
                   </form>
