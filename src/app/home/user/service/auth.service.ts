@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class AuthService {
+  public userToken:any;
 
   constructor(private http : Http , private fb : FacebookService ) { }
 
@@ -27,6 +28,7 @@ export class AuthService {
       localStorage.setItem('id_token', token); //store the user token in the localStorage ... 
       localStorage.setItem('user-id', id); //store the user _id in the localStorage ... 
       localStorage.setItem('user-name', name); //store the user name in the localStorage ... 
+      this.userToken = token;
     }
 
     facebookLogin(user){
@@ -48,6 +50,7 @@ export class AuthService {
     }
     
      logout(){
+      this.userToken = null;
       localStorage.clear();
       this.fb.logout().then(() => console.log('Logged out!'));
 

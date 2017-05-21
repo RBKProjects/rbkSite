@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { AuthService } from '../home/user/service/auth.service';
 
 
 @Component({
@@ -8,13 +9,15 @@ import {Router} from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  
-  constructor(private router: Router) { }
+    public userAccessTest:any;
+  constructor(private router: Router , private auth : AuthService ) { 
+  this.userAccessTest=this.auth.userLoginTest()
+}
 
   ngOnInit() {
   }
   callSignup(){
     this.router.navigate(['/signup']);
   }
-
+  
 }
