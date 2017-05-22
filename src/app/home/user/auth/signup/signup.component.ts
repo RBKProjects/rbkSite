@@ -19,13 +19,7 @@ export class SignupComponent implements OnInit {
   private user : Object;
   registerForm: FormGroup;
   signinCom: SigninComponent;
-    name="";
-    isUser = false;
-    id="";
-    email="";
-    no = false;
-    firstName="";
-    lastName="";
+ 
   
   constructor( private router: Router,
    private authService: AuthService, 
@@ -34,16 +28,7 @@ export class SignupComponent implements OnInit {
    private _ngZone: NgZone ,
    private http   : Http
   ) {
-   let initParams: InitParams = {
 
-          appId: "820622594754755",
-          status: true,
-          cookie: true, 
-          xfbml: true,
-          version: 'v2.9'
-    };
-
-    fb.init(initParams);
     this.signinCom = new SigninComponent(router, authService, formBuilder,fb,_ngZone,http );
   }
   

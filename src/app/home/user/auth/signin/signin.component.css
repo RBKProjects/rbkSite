@@ -1,3 +1,8 @@
+@media only screen and (max-width: 320px) {
+
+   body { font-size: 2em; }
+
+}
 h3{
    color:#C71585;
 }
@@ -47,9 +52,31 @@ p.texth2{
    padding-left: 5px;
    padding-right: 30px;
 }
-#fb{
-  padding-top: 0px;
-   width:230px;
-   height: 30px;
+
+.btn-facebook {
+    background: #3B5998;
+    border-radius: 0;
+    color: #fff;
+    width: 230px;
+    height: 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+
+  }
+.btn-facebook:link, .btn-facebook:visited {
+    color: #fff;
+  }
+.btn-facebook:active, .btn-facebook:hover {
+    background: #263961;
+    color: #fff;
+  }
+ span #fbb{
+  font: 255px bold arial;
+  font-size: 200px;
+}
+#buttf{
+  
+  padding-left: 0px;
   
 }
