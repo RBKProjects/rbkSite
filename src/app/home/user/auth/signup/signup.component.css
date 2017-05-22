@@ -28,6 +28,7 @@ div{
 }
 #conBorder{
   border: 1px solid #DCDCDC;
+  height: 440px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #d{
@@ -36,6 +37,7 @@ div{
 #image{
   position: relative;
   filter: brightness(50%);
+  height: 440px; 
   background-repeat: no-repeat;
  }
  small{

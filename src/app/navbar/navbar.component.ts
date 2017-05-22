@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit{
 
   testUser(){
   console.log(localStorage.getItem('id_token'))
-      if(localStorage.getItem('id_token').length){
+      if(localStorage.getItem('id_token')!==null){
         return true
       }
       else{
