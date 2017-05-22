@@ -80,9 +80,6 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
   { path: 'test', component: TestviewComponent },
   { path: 'updateinfo', component: UpdateInfoComponent }
   
-  
- 
-
 ])
   ],
 

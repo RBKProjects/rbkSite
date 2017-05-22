@@ -23,7 +23,9 @@ label span{
     border:none;
 }
 h2.texth2{
-   color:white; 
+   color:white;
+   height: auto;
+   width:auto; 
    position: absolute; 
    text-align: center;
    top: 100px;
