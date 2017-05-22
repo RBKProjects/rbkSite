@@ -26,7 +26,7 @@ import { InterviewComponent } from './interview/interview.component';
 import { MindestAssComponent } from './home/user/auth/mindest-ass/mindest-ass.component';
 import { AnaAssComponent } from './home/user/auth/ana-ass/ana-ass.component';
 
-
+import { ConUserGuard } from './con-user.guard';
 import { UpdateInfoComponent } from './update-info/update-info.component';
 
 
@@ -63,7 +63,7 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
     HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-  { path:'',component:HomeComponent},
+  { path:'',component:UserhomeComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'uhome', component: UserhomeComponent },
@@ -73,20 +73,17 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
   { path:'fbUsignin', component: FacebookLogInComponent },
   { path: 'test', component: TestviewComponent },
   { path: 'interview', component: InterviewComponent },
-  { path: 'minAss', component: MindestAssComponent },
+  { path: 'minAss', component: MindestAssComponent,canActivate:[ConUserGuard]} ,
   { path: 'anaAss', component: AnaAssComponent },
 
   { path: 'esignin', component: EmployeeFbLoginComponent },
   { path: 'test', component: TestviewComponent },
   { path: 'updateinfo', component: UpdateInfoComponent }
   
-  
- 
-
 ])
   ],
 
-  providers: [{provide:LocationStrategy,useClass:HashLocationStrategy},AuthService,EAuthService],
+  providers: [{provide:LocationStrategy,useClass:HashLocationStrategy},AuthService,EAuthService,ConUserGuard],
 
   bootstrap: [AppComponent]
 })

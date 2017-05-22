@@ -11,7 +11,7 @@ h3{
   color:#C71585;
 }
 #conBorder{
-  border: 0.5px solid #808080;
+  border: 0.5px solid #DCDCDC;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 label span{
@@ -23,7 +23,9 @@ label span{
     border:none;
 }
 h2.texth2{
-   color:white; 
+   color:white;
+   height: auto;
+   width:auto; 
    position: absolute; 
    text-align: center;
    top: 100px;
@@ -42,5 +44,12 @@ p.texth2{
    width:100%;
 }
 .inside{
-  padding: 5px;
+   padding-left: 5px;
+   padding-right: 30px;
+}
+#fb{
+  padding-top: 0px;
+   width:230px;
+   height: 30px;
+  
 }

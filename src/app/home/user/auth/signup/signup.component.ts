@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , NgZone} from '@angular/core';
+import { Http } from "@angular/http";
 import { AuthService } from '../../service/auth.service';
 import { SigninComponent } from '../signin/signin.component';
 import {Router} from '@angular/router';
 import { FormBuilder, Validators ,FormGroup } from '@angular/forms';
 import { emailValidator , matching } from '../validators';
 import { FacebookLogInComponent } from '../facebook-log-in/facebook-log-in.component';
+import { FacebookService, InitParams , LoginResponse } from 'ngx-facebook';
+
+
 
 
 
@@ -21,10 +25,32 @@ export class SignupComponent implements OnInit {
   private user : Object;
   registerForm: FormGroup;
   signinCom: SigninComponent;
-  fbulogin:FacebookLogInComponent;
+    name="";
+    isUser = false;
+    id="";
+    email="";
+    no = false;
+    firstName="";
+    lastName="";
   
-  constructor( private router: Router, private authService: AuthService, private formBuilder: FormBuilder) { 
-    this.signinCom = new SigninComponent(router, authService, formBuilder );
+  constructor( private router: Router,
+   private authService: AuthService, 
+   private formBuilder: FormBuilder,
+   private fb     : FacebookService,
+   private _ngZone: NgZone ,
+   private http   : Http
+  ) {
+   let initParams: InitParams = {
+
+          appId: "820622594754755",
+          status: true,
+          cookie: true, 
+          xfbml: true,
+          version: 'v2.9'
+    };
+
+    fb.init(initParams);
+    this.signinCom = new SigninComponent(router, authService, formBuilder,fb,_ngZone,http );
   }
   
   ngOnInit() {//form for validate the input of an user while signing up 
@@ -54,7 +80,7 @@ export class SignupComponent implements OnInit {
     });
   }//end of signup function ...
    fbLogin(){
-     this.fbulogin.getUserInfo();
+     this.signinCom.getUserInfo();
    }
 
 
