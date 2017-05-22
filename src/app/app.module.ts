@@ -25,7 +25,7 @@ import { InterviewComponent } from './interview/interview.component';
 import { MindestAssComponent } from './home/user/auth/mindest-ass/mindest-ass.component';
 import { AnaAssComponent } from './home/user/auth/ana-ass/ana-ass.component';
 
-
+import { ConUserGuard } from './con-user.guard';
 import { UpdateInfoComponent } from './update-info/update-info.component';
 
 
@@ -69,13 +69,13 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
   { path: 'esignin', component: SigninemployeeComponent },
 
   { path: 'test', component: TestviewComponent },
-  { path: 'interview', component: InterviewComponent },
-  { path: 'minAss', component: MindestAssComponent },
-  { path: 'anaAss', component: AnaAssComponent },
+  { path: 'interview', component: InterviewComponent,canActivate:[ConUserGuard] },
+  { path: 'minAss', component: MindestAssComponent,canActivate:[ConUserGuard] },
+  { path: 'anaAss', component: AnaAssComponent ,canActivate:[ConUserGuard]},
 
   { path: 'esignin', component: EmployeeFbLoginComponent },
   { path: 'test', component: TestviewComponent },
-  { path: 'updateinfo', component: UpdateInfoComponent }
+  { path: 'updateinfo', component: UpdateInfoComponent ,canActivate:[ConUserGuard]}
   
   
  
