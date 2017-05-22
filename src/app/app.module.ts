@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './home/user/auth/signup/signup.component';
 import { SigninComponent } from './home/user/auth/signin/signin.component';
-import { FacebookLogInComponent } from './home/user/auth/facebook-log-in/facebook-log-in.component';
 import { AuthService} from './home/user/service/auth.service';
 import { UserhomeComponent } from './home/user/userhome/userhome.component';
 import { EmployeehomeComponent } from './home/employee/employeehome/employeehome.component';
@@ -37,7 +36,6 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
     HomeComponent,
     SignupComponent,
     SigninComponent,
-    FacebookLogInComponent,
     UserhomeComponent,
     EmployeehomeComponent,
     SigninemployeeComponent,
@@ -70,7 +68,6 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
   { path: 'ehome', component: EmployeehomeComponent },
   { path: 'esignin', component: SigninemployeeComponent },
 
-  { path:'fbUsignin', component: FacebookLogInComponent },
   { path: 'test', component: TestviewComponent },
   { path: 'interview', component: InterviewComponent },
   { path: 'minAss', component: MindestAssComponent },

@@ -5,13 +5,7 @@ import { SigninComponent } from '../signin/signin.component';
 import {Router} from '@angular/router';
 import { FormBuilder, Validators ,FormGroup } from '@angular/forms';
 import { emailValidator , matching } from '../validators';
-import { FacebookLogInComponent } from '../facebook-log-in/facebook-log-in.component';
 import { FacebookService, InitParams , LoginResponse } from 'ngx-facebook';
-
-
-
-
-
 
 
 
