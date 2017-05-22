@@ -1,88 +1,119 @@
-body{
-  overflow: auto;
-}
-#b{
-  background-color:#C71585;
-  color:white;
-  padding: 12px 28px;
-  
-}
-img{
-  float: left;
-}
-#navbarCollapse{
-  float: right;
-  align: center;
-  margin-top: 0px;
-  padding-right:25px;
-}
-.fm{
-   margin-right: 0px;
-}
-#d{
-  float: right;
-}
-#sign{
-  background-color: none;
-  border:1px solid white;
-  width: 110px;
-}
-p{
-  left: 20%;
-  color: white;
-}
-small{
-  color:#F0F0F0;
-  padding-right: 60px;
-}
-#last{
-  left:30%;
-}
-.wf-container{
-border: 1px solid #FFFFFF;
-background-color: #C71585; 
-min-height:200px;
-min-width:150px
-}
-#hr{
-   border-top: 1px solid #DCDCDC;
-}
-.ri{
-  padding-left: 20px;
-}
-#ri{
-  padding-top: 7px;
-}
-#foot{
-   border:1px solid;
-   border-top-color: #DCDCDC;
-   background:#b31277 !important; 
-   padding-left: 30px;  
-}
-input[type=submit]:focus {
-  border-size:2px;
-    border-color:white;
-}
-input[type="submit"], textarea {
-  padding-top: 2px;
-  border: 2px solid #DCDCDC;
-  color:white;
-  background-color : #C71585;
-}
-.receive1 small{
-  padding-right: 0px;
-  vertical-align:bottom;
-  border: none !important ;
-  padding-left: 825px;
-  
-}
-.receive2{
-  padding-right: 0px;
-  padding-left: 780px;
-  text-align: center;
-}
-#r{
-   position: fixed;
-  bottom: 0;
+body {
+    overflow: auto;
 }
 
+#b {
+    background-color: #C71585;
+    color: white;
+    padding: 12px 28px;
+}
+
+img {
+    float: left;
+}
+
+#navbarCollapse {
+    float: right;
+    align: center;
+    margin-top: 0px;
+    padding-right: 25px;
+}
+
+.fm {
+    margin-right: 0px;
+}
+
+#d {
+    float: right;
+}
+
+#sign {
+    background-color: none;
+    border: 1px solid white;
+    width: 110px;
+}
+
+p {
+    left: 20%;
+    color: white;
+}
+
+small {
+    color: #F0F0F0;
+}
+
+#last {
+    left: 30%;
+}
+
+.wf-container {
+    border: 1px solid #FFFFFF;
+    background-color: #C71585;
+    min-height: 200px;
+    min-width: 150px
+}
+
+hr {
+    border-color: #F47BCE;
+}
+
+#foot {
+    background: #b31277 !important;
+    padding-left: 30px;
+}
+
+#foot p {
+    margin-top: 15px;
+    font-size: 0.8em;
+}
+
+input[type=submit]:hover {
+    color: #C71585;
+    background-color: White;
+}
+
+input[type=submit]:focus {
+    border-width: 2px;
+    border-color: white;
+}
+
+input[type="submit"],
+textarea {
+    padding-top: 2px;
+    border: 2px solid white;
+    color: white;
+    background-color: #C71585;
+}
+
+.receive1 small {
+    padding-right: 0px;
+    vertical-align: bottom;
+    border: none !important;
+    padding-left: 825px;
+}
+#s1{
+  margin-top: -5px;
+}
+#s2{
+  margin-top: -5px;
+}
+#s3{
+  margin-top: -5px;
+}
+
+.receive2 {
+    padding-right: 0px;
+    padding-left: 780px;
+    text-align: center;
+}
+
+#r {
+    position: fixed;
+    bottom: 0;
+}
+
+.copyRightFooter {
+    border: 1px #F47BCE;
+    border-style: solid none none none;
+    /*line-height: 15px;*/
+}
