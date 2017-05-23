@@ -1,10 +1,37 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 320px) {
 
+   body { font-size: 2em; }
+
+}
+@media only screen and (max-width: 767px) {
+
+   h1 {
+      font-size: 3em;
+   }
+
+   h2 {
+      font-size: 2em;
+   }
+   h3{
+    font-size: 1em;
+   }
+   h4{
+    font-size: 0em;
+   }
+
+}
 #x{
   color: white;
 }
 h5{
   padding-left: 15px;
    color:#C71585;
+
 }
 h3{
   color:#C71585;
@@ -12,9 +39,7 @@ h3{
 label span{
     color:#C71585;
 }
-div{
-  padding-bottom: 0px;
-}
+
 .hp{
   display: inline-block;
 }
@@ -32,7 +57,8 @@ div{
 }
 #conBorder{
   border: 1px solid #DCDCDC;
-  height: 440px;
+  
+  white-space: normal;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #d{
@@ -58,7 +84,7 @@ div{
 #image{
   position: relative;
   filter: brightness(50%);
-  height: 440px; 
+  height: 450px; 
   background-repeat: no-repeat;
  }
  small{
@@ -76,23 +102,31 @@ div{
 
 }
 h2.texth2{
-   color:white; 
+   color:white;
    position: absolute; 
    text-align: center;
-   top: 100px;
-   left: 180px; 
+   font-size: 2em;
+   top: 30%;
+   left: 45%; 
+   transform: translate(-50%, -50%);
 }
 p.texth2{
    color:white; 
-   position: absolute; 
-   text-align: center;
-   top: 190px; 
-   left: 100px;
+   position: absolute;
+   text-align: center; 
+   font-size: 1.1em;
+   top: 50%;
+   left: 45%; 
+   transform: translate(-50%, -50%);
+   white-space: normal;
    }
-.btn-primary {
+input.btn-primary {
     background: #C71585;
     color: white;
-    border:none;
+    border:none; 
+}
+.btn-primary{
+  white-space: normal;
 }
 #fb{
   padding-top: 0px;

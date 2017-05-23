@@ -1,8 +1,9 @@
-@media only screen and (max-width: 320px) {
-
-   body { font-size: 2em; }
-
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 h3{
    color:#C71585;
 }
@@ -10,7 +11,9 @@ h3{
    position: relative;
      filter: brightness(50%);
      background-repeat: no-repeat;
-
+}
+.btn-primary{
+  white-space: normal;
 }
 .sign{
   color:#C71585;
@@ -22,26 +25,29 @@ h3{
 label span{
     color:#C71585;
 }
-.btn-primary {
+input.btn-primary {
     background: #C71585;
     color: white;
     border:none;
 }
 h2.texth2{
    color:white;
-   height: auto;
-   width:auto; 
    position: absolute; 
    text-align: center;
-   top: 100px;
-   left: 180px; 
+   font-size: 2em;
+   top: 30%;
+   left: 45%; 
+   transform: translate(-50%, -50%); 
 }
 p.texth2{
    color:white; 
-   position: absolute; 
-   text-align: center;
-   top: 190px; 
-   left: 100px;
+   position: absolute;
+   text-align: center; 
+   font-size: 1.1em;
+   top: 50%;
+   left: 45%; 
+   transform: translate(-50%, -50%);
+   white-space: normal;
    }
 .btn-default{
    background: #3B5998;
@@ -62,6 +68,7 @@ p.texth2{
     border-width: 1px;
     border-style: solid;
     border-color: white;
+     white-space: normal;
 
   }
 .btn-facebook:link, .btn-facebook:visited {
@@ -79,4 +86,47 @@ p.texth2{
   
   padding-left: 0px;
   
+}
+@media only screen and (max-width: 320px) {
+
+   body { font-size: 2em; }
+
+}
+@media only screen and (max-width: 767px) {
+
+   h1 {
+      font-size: 3em;
+   }
+
+   h2 {
+      font-size: 2em;
+   }
+   h3{
+    font-size: 1em;
+   }
+   h4{
+    font-size: 0em;
+   }
+
+}
+html {
+  font-size: 14px;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 28px;
+  }
 }

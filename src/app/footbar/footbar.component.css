@@ -45,6 +45,29 @@ small {
 #last {
     left: 30%;
 }
+#imsoch1{
+    width:45px; 
+    height:28px; 
+    padding-left: 15px;
+}
+#imsoch2{
+    width:33px; 
+    height:29px; 
+ 
+}
+#imsoch3{
+   width:33px; 
+    height:29px; 
+   
+}
+#imsoch4{
+    width:33px; 
+    height:29px; 
+}
+#imsoch5{
+    width:33px; 
+    height:29px;  
+}
 
 .wf-container {
     border: 1px solid #FFFFFF;
