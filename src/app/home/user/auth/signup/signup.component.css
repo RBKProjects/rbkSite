@@ -21,6 +21,10 @@ div{
 #sign{
   color:#C71585;
 }
+.btn-fb{
+  background-color: #3B5998;
+  color: white;
+}
 
 #already{
   margin-left:0px;
@@ -34,6 +38,23 @@ div{
 #d{
   padding-right: 0px;
 }
+.btn-facebook {
+    background: #3B5998;
+    border-radius: 0;
+    color: #fff;
+    width: 230px;
+    height: 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white; 
+  }
+.btn-facebook:link, .btn-facebook:visited {
+    color: #fff;
+  }
+.btn-facebook:active, .btn-facebook:hover {
+    background: #263961;
+    color: #fff;
+  }
 #image{
   position: relative;
   filter: brightness(50%);
