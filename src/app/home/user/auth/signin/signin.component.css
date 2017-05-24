@@ -3,90 +3,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-h3{
-   color:#C71585;
-}
-#image{
-   position: relative;
-     filter: brightness(50%);
-     background-repeat: no-repeat;
-}
-.btn-primary{
-  white-space: normal;
-}
-.sign{
-  color:#C71585;
-}
-#conBorder{
-  border: 0.5px solid #DCDCDC;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-label span{
-    color:#C71585;
-}
-input.btn-primary {
-    background: #C71585;
-    color: white;
-    border:none;
-}
-h2.texth2{
-   color:white;
-   position: absolute; 
-   text-align: center;
-   font-size: 2em;
-   top: 30%;
-   left: 45%; 
-   transform: translate(-50%, -50%); 
-}
-p.texth2{
-   color:white; 
-   position: absolute;
-   text-align: center; 
-   font-size: 1.1em;
-   top: 50%;
-   left: 45%; 
-   transform: translate(-50%, -50%);
-   white-space: normal;
-   }
-.btn-default{
-   background: #3B5998;
-   color:white;
-   width:100%;
-}
-.inside{
-   padding-left: 5px;
-   padding-right: 30px;
-}
-
-.btn-facebook {
-    background: #3B5998;
-    border-radius: 0;
-    color: #fff;
-    width: 230px;
-    height: 40px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
-     white-space: normal;
-
-  }
-.btn-facebook:link, .btn-facebook:visited {
-    color: #fff;
-  }
-.btn-facebook:active, .btn-facebook:hover {
-    background: #263961;
-    color: #fff;
-  }
- span #fbb{
-  font: 255px bold arial;
-  font-size: 200px;
-}
-#buttf{
-  
-  padding-left: 0px;
-  
-}
 @media only screen and (max-width: 320px) {
 
    body { font-size: 2em; }
@@ -109,24 +25,121 @@ p.texth2{
    }
 
 }
-html {
-  font-size: 14px;
+#x{
+  color: white;
+}
+h5{
+  padding-left: 15px;
+   color:#C71585;
+
+}
+h3{
+  color:#C71585;
+}
+label span{
+    color:#C71585;
 }
 
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 16px;
-  }
+.hp{
+  display: inline-block;
+}
+#sign{
+  color:#C71585;
+}
+.btn-fb{
+  background-color: #3B5998;
+  color: white;
 }
 
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 20px;
+#already{
+  margin-left:0px;
+  display:inline-block;
+}
+#conBorder{
+  border: 1px solid #DCDCDC;
+  
+  white-space: normal;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#d{
+  padding-right: 0px;
+}
+.btn-facebook {
+    background: #3B5998;
+    border-radius: 0;
+    color: #fff;
+    width: 230px;
+    height: 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white; 
   }
+.btn-facebook:link, .btn-facebook:visited {
+    color: #fff;
+  }
+.btn-facebook:active, .btn-facebook:hover {
+    background: #263961;
+    color: #fff;
+  }
+#image{
+  position: relative;
+  filter: brightness(50%);
+  height: 450px; 
+  background-repeat: no-repeat;
+ }
+ small{
+  padding-top: 0px;
+ }
+ #already{
+  padding-top: 0px;
+ }
+.inside{
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+
+}
+h2.texth2{
+   color:white;
+   position: absolute; 
+   text-align: center;
+   font-size: 2em;
+   top: 30%;
+   left: 45%; 
+   transform: translate(-50%, -50%);
+}
+p.texth2{
+   color:white; 
+   position: absolute;
+   text-align: center; 
+   font-size: 1.1em;
+   top: 50%;
+   left: 45%; 
+   transform: translate(-50%, -50%);
+   white-space: normal;
+   }
+input.btn-primary {
+    background: #C71585;
+    color: white;
+    border:none; 
+}
+.btn-primary{
+  white-space: normal;
+}
+#fb{
+  padding-top: 0px;
+   width:230px;
+   height: 30px;
+  
+}
+.col-md-6{
+  padding-right: 35px;
+}
+#input-submit{
+ padding-top: 5px;
+ padding-right: 40px;
+ width:96.5%; 
 }
 
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 28px;
-  }
-}

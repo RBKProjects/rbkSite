@@ -113,7 +113,7 @@ textarea {
     vertical-align: bottom;
     border: none !important;
     padding-left: 825px;
-}
+}    
 #s1{
   margin-top: -5px;
 }
@@ -123,10 +123,15 @@ textarea {
 #s3{
   margin-top: -5px;
 }
+#logos{
+    box-sizing: inherit;
+    display: block;
+ align: center;   
+}
 
 .receive2 {
     padding-right: 0px;
-    padding-left: 780px;
+    padding-left: 5%;
     text-align: center;
 }
 

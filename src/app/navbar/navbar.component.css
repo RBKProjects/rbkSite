@@ -5,13 +5,17 @@
   height: 30px;
   line-height: 5px;
 }
+.navbar-default .navbar-toggle .icon-bar {
+ background-color: #C71585;
+ }
 
 #b{
   background-color:#C71585;
   color:white;
-  padding: 12px 28px;
-  
+  float: left;
+  padding: 12px 28px; 
 }
+
 #rbk{
   float: left;
   max-width:18%; 
@@ -19,12 +23,13 @@
   padding-left: 0px;
   height:auto;
 }
+
 #navbarCollapse{
   float: right;
   align: center;
   margin-top: 0px;
-  padding-right:25px;
 }
+
 .fm{
    margin-right: 0px;
 }
