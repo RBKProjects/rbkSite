@@ -1,29 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-  @media only screen and (max-width:320px){
-        /* styles for browsers larger than 960px; */
-        .navImg{
-        	/*display: none;*/
-        	
-        }
-    }
-html {
-  font-size: 14px;
-}
-
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 28px;
-  }
+ html, body { /*to modefiy the extra space from leth and right*/
+  width: auto !important;
+  overflow-x: hidden !important;
 }

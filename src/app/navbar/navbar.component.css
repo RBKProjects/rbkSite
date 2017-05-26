@@ -18,7 +18,7 @@
 
 #rbk{
   float: left;
-  max-width:18%; 
+  max-width:15%; 
   margin-top: 0px;
   padding-left: 0px;
   height:auto;
@@ -27,7 +27,7 @@
 #navbarCollapse{
   float: right;
   align: center;
-  margin-top: 0px;
+  margin-top: 3%;
 }
 
 .fm{
