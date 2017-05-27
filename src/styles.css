@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+ html, body { /*to modefiy the extra space from leth and right*/
+  width: auto !important;
+  overflow-x: hidden !important;
+}

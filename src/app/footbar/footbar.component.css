@@ -45,12 +45,34 @@ small {
 #last {
     left: 30%;
 }
+#imsoch1{
+    width:45px; 
+    height:28px; 
+    padding-left: 15px;
+}
+#imsoch2{
+    width:33px; 
+    height:29px; 
+ 
+}
+#imsoch3{
+   width:33px; 
+   height:29px;    
+}
+#imsoch4{
+    width:33px; 
+    height:29px; 
+}
+#imsoch5{
+    width:33px; 
+    height:29px;  
+}
 
 .wf-container {
     border: 1px solid #FFFFFF;
     background-color: #C71585;
     min-height: 200px;
-    min-width: 150px
+    min-width: 120px
 }
 
 hr {
@@ -90,7 +112,7 @@ textarea {
     vertical-align: bottom;
     border: none !important;
     padding-left: 825px;
-}
+}    
 #s1{
   margin-top: -5px;
 }
@@ -100,11 +122,16 @@ textarea {
 #s3{
   margin-top: -5px;
 }
+#logos{
+    box-sizing: inherit;
+    display: block;
+ align: center;   
+}
 
 .receive2 {
     padding-right: 0px;
-    padding-left: 780px;
-    text-align: center;
+    padding-left: 35%;
+   
 }
 
 #r {
