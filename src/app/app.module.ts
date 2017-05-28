@@ -75,7 +75,7 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
 
   { path: 'esignin', component: EmployeeFbLoginComponent },
   { path: 'test', component: TestviewComponent },
-  { path: 'updateinfo', component: UpdateInfoComponent ,canActivate:[ConUserGuard]}
+  { path: 'updateinfo', component: UpdateInfoComponent }//,canActivate:[ConUserGuard]}
   
   
  

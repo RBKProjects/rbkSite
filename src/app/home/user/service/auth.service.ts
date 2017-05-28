@@ -55,7 +55,7 @@ export class AuthService {
    updateInfo(user,params) { 
       let headers = new Headers();
       headers.append('Content-Type','application/json');
-      return this.http.post('api/update/'+ params, user, {headers: headers})
+      return this.http.put('api/user/update/'+ params, user, {headers: headers})
       .map(res => res.json());
      }
 

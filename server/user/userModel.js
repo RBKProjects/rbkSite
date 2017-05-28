@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
 		type: String
 	},
 	isRefugee: {
-		type: Boolean
+		type: String
 	},
 	email: {
 		type: String,
@@ -41,13 +41,13 @@ const UserSchema = new mongoose.Schema({
 		type: String
 	},
 	englishAbility: {
-		type: Number
+		type: String
 	},
 	knowRBK: {
 		type: String,
 	},
 	codeExperience: {
-		type: Boolean
+		type: String
 	},
 	// emailCode : {
 	// 	type: String

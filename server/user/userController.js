@@ -85,6 +85,7 @@ module.exports = {
 	},
 
 	updateUser : (req, res) => {
+		console.log(req.body)
 		userModel.findOne({_id : req.params.id }, function(err, user){
 	      if(err){
 	        res.status(500).send(err);
