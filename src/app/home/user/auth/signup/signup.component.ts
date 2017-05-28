@@ -16,7 +16,7 @@ import { FacebookService, InitParams , LoginResponse } from 'ngx-facebook';
 })
 
 export class SignupComponent implements OnInit {
-  private user : Object;
+   user : Object;
   registerForm: FormGroup;
   signinCom: SigninComponent;
  
@@ -45,14 +45,15 @@ export class SignupComponent implements OnInit {
     }
 
 
-  addNewUser(value: Object) { // function to add new user to DB ...
-    this.user=value;
-    console.log(value)
-    this.authService.signup({user:this.user}).subscribe(data => {
+  addNewUser(value) { // function to add new user to DB ...
+    this.user=value.email;
+   // let that=this;
+   console.log(value)
+    this.authService.signup({user:{email:value.email,password:value.password,firstName:value.firstName,lastName:value.lastName}}).subscribe(data => {
       if(data){///need to refactor depend on the data from the back end 
-        this.signinCom.submitSignIn(value);
+       // this.signinCom.submitSignIn(value);
         this.authService.storeInLocalStorage(data.token , data.id , data.userName); // store that data in localStorage ...
-        this.router.navigate(['/uhome']);
+        this.router.navigate(['/updateinfo']);
       }else {
         this.router.navigate(['/signup']);
       }

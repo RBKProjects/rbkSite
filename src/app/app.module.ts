@@ -61,7 +61,7 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
     HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-  { path:'',component:HomeComponent},
+  { path:'',component:SigninComponent},
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'uhome', component: UserhomeComponent },
@@ -70,12 +70,12 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
 
   { path: 'test', component: TestviewComponent },
   { path: 'interview', component: InterviewComponent,canActivate:[ConUserGuard] },
-  { path: 'minAss', component: MindestAssComponent,canActivate:[ConUserGuard] },
-  { path: 'anaAss', component: AnaAssComponent ,canActivate:[ConUserGuard]},
+  { path: 'minAss', component: MindestAssComponent},
+  { path: 'anaAss', component: AnaAssComponent },
 
   { path: 'esignin', component: EmployeeFbLoginComponent },
   { path: 'test', component: TestviewComponent },
-  { path: 'updateinfo', component: UpdateInfoComponent ,canActivate:[ConUserGuard]}
+  { path: 'updateinfo', component: UpdateInfoComponent }
   
   
  

@@ -10,11 +10,13 @@ module.exports = {
 	signup : (req, res) => {
 		let userData  = req.body.user;
 		//userData.emailCode = helper.randCode();
+		//console.log(userData)
 		userModel.findOne({email : userData.email}, (err, userEX)=>{
 			if (userEX) {
 				res.json({isUserExist : true })
 			}else {
-				userModel.create(userData, (err, data)=> {
+
+				userModel.create(userModel, (err, data)=> {
 					if (err) {
 						res.status(500).send(err);
 					}else{
