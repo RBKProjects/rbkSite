@@ -107,7 +107,7 @@ export class SigninComponent implements OnInit {
            if(data){ // test if the data from backend that has token ...
            console.log("insid the sigin")
            this.authService.storeInLocalStorage(data.token , data.id , data.userName); // store that data in localStorage ...
-           this.router.navigate(['/uhome']); 
+           this.router.navigate(['/updateinfo']); 
 
            }else {
            console.log("error")

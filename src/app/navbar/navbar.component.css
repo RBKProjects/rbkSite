@@ -15,6 +15,29 @@
   float: left;
   padding: 12px 28px; 
 }
+.circle {
+      width: 50px;
+      height: 50px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: none;
+      border: 2px solid #C71585;
+      margin-left: 20%;
+      margin-top: -10%;
+      text-align: center;
+      font-size: 150%;
+    }
+    table{
+    margin-left: 5%;
+    border-spacing: 50px;
+    border-collapse: separate;
+    }
+    .between {
+    border: 0.5px dashed #C71585;
+    margin-left:10px;
+    margin-right:10px;
+}
 
 #rbk{
   float: left;
@@ -61,4 +84,7 @@ p{
    box-shadow: none !important;
    background-color:white;
    border-color: none;
+}
+h2{
+  color:#C71585;
 }
