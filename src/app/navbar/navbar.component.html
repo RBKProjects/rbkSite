@@ -1,37 +1,39 @@
 <div class="container">
 
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
     <div class="row">
-   
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse" >
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-           <img class="navImg" style="max-width:15%; margin-left: 5%; margin-top: 3.5%;
+        <img class="navImg" style="max-width:15%; margin-left: 5%; margin-top: 3.5%;
                   height:auto;" src="assets/logo.png" />
-        <div class="collapse navbar-collapse" id="navbarCollapse" >
-            <ul class="nav navbar-nav">
-                 <li><a href="#" target="_blank">The Program</a></li>
-                 <li><a href="#" target="_blank"> Curiculum</a></li>
-                 <li><a href="#" target="_blank">Volunteers</a></li>
-                 <li><a href="#" target="_blank">Partners</a></li>
-                 <li><a href="#" target="_blank">Hire our Grads</a></li>
-                 <li><a href="#" target="_blank">Alumni Outcome</a></li>
-                 <li><a href="#" target="_blank">FAQ</a></li>
-                 <li *ngIf="!testUser()"><button type="button" id="b" class="btn" (click)="callSignup()">Apply</button></li>
-                 <li *ngIf="testUser()"><button type="button" id="b" class="btn" (click)="logOut()">logout</button></li>
-            </ul>
-           
-          </div> 
-         </div>
-         <div class="col-md-12" align="center" >
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#" target="_blank">The Program</a></li>
+            <li><a href="#" target="_blank"> Curiculum</a></li>
+            <li><a href="#" target="_blank">Volunteers</a></li>
+            <li><a href="#" target="_blank">Partners</a></li>
+            <li><a href="#" target="_blank">Hire our Grads</a></li>
+            <li><a href="#" target="_blank">Alumni Outcome</a></li>
+            <li><a href="#" target="_blank">FAQ</a></li>
+            <li *ngIf="!testUser()"><button type="button" id="b" class="btn" (click)="callSignup()">Apply</button></li>
+            <li *ngIf="testUser()"><button type="button" id="b" class="btn" (click)="logOut()">logout</button></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- <div class="col-md-12" align="center" >
              <h2>Welcome to The RBK Admissions Portal </h2>
-         </div>
-         <div class="col-md-12">
-         <table>
+         </div> -->
+<!--<div class="col-md-12">
+          <table>
           <tr>
           <td><div class="circle">1</div></td>
            <hr class="between" />
@@ -45,6 +47,5 @@
             <hr class="between" />
             <td><div class="circle">6</div></td>
          </tr>
-      </table>   
-    </div>
-
+      </table>
+    </div> -->

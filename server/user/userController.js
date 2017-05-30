@@ -99,14 +99,14 @@ module.exports = {
 	        user.email = req.body.email || user.email;
 	        user.nationality = req.body.nationality || user.nationality;
 	        user.gender = req.body.gender || user.gender;
-			user.dateOfBirth = req.body.dateOfBirth || user.dateOfBirth;
-			user.city = req.body.city || user.city;
-			user.phone = req.body.phone || user.phone;
-			user.englishAbility = req.body.englishAbility || user.englishAbility;
-			user.educationLevel = req.body.educationLevel || user.educationLevel;
-			user.knowRBK = req.body.knowRBK || user.knowRBK;
-			user.codeExperience = req.body.codeExperience || user.codeExperience;
-			user.isRefugee = req.body.isRefugee || user.isRefugee;
+					user.dateOfBirth = req.body.dateOfBirth || user.dateOfBirth;
+					user.city = req.body.city || user.city;
+					user.phone = req.body.phone || user.phone;
+					user.englishAbility = req.body.englishAbility || user.englishAbility;
+					user.educationLevel = req.body.educationLevel || user.educationLevel;
+					user.knowRBK = req.body.knowRBK || user.knowRBK;
+					user.codeExperience = req.body.codeExperience || user.codeExperience;
+					user.isRefugee = req.body.isRefugee || user.isRefugee;
 	        user.save((err, savedUser)=>{
 	          if(err){
 	            res.status(500).send(err);
@@ -156,7 +156,7 @@ module.exports = {
 			}
 		})
 	},
-	
+
 	facebookLogin :(req, res)=>{
 		userModel.findOne({FbID : req.body.FbID}, (err, user) => {
 			if (!user) {
@@ -169,14 +169,14 @@ module.exports = {
 		})
 	},
 
-	isUserLoggedIn: (req, res) => { 
+	isUserLoggedIn: (req, res) => {
 		userModel.findOne({ _id: req.body.user.id }, (err, result) => {
 			if (!result) {
 				res.status(500).send(err);
-			} else { 
+			} else {
 				if (result.isLoggedIn) {
 					res.json({ isLoggedIn: true });
-				} else { 
+				} else {
 					res.json({ isLoggedIn: false });
 				}
 			}
