@@ -45,11 +45,11 @@ export class SignupComponent implements OnInit {
     }
 
 
-  addNewUser(value) { // function to add new user to DB ...
-    this.user=value.email;
+  addNewUser(value:Object) { // function to add new user to DB ...
+    this.user=value;
    // let that=this;
    console.log(value)
-    this.authService.signup({user:{email:value.email,password:value.password,firstName:value.firstName,lastName:value.lastName}}).subscribe(data => {
+    this.authService.signup({user:this.user}).subscribe(data => {
       if(data){///need to refactor depend on the data from the back end 
        // this.signinCom.submitSignIn(value);
         this.authService.storeInLocalStorage(data.token , data.id , data.userName); // store that data in localStorage ...

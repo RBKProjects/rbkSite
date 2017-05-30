@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-progress',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress.component.css']
 })
 export class ProgressComponent implements OnInit {
+	public location = '' ;
 
-  constructor() { }
+  constructor(private  _router : Router) {
+  	this.location = _router.url; //add this to let this component hide in uhome url
+  }
 
   ngOnInit() {
   }
