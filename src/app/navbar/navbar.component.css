@@ -1,90 +1,97 @@
-.btn{
+.btn {
   background-color: #C71585;
   width: 110px;
   margin-top: 10px;
   height: 30px;
   line-height: 5px;
 }
+
 .navbar-default .navbar-toggle .icon-bar {
- background-color: #C71585;
- }
-
-#b{
-  background-color:#C71585;
-  color:white;
-  float: left;
-  padding: 12px 28px; 
+  background-color: #C71585;
 }
+
+#b {
+  background-color: #C71585;
+  color: white;
+  float: left;
+  padding: 12px 28px;
+}
+
 .circle {
-      width: 50px;
-      height: 50px;
-      -webkit-border-radius: 25px;
-      -moz-border-radius: 25px;
-      border-radius: 25px;
-      background: none;
-      border: 2px solid #C71585;
-      margin-left: 20%;
-      margin-top: -10%;
-      text-align: center;
-      font-size: 150%;
-    }
-    table{
-    margin-left: 5%;
-    border-spacing: 50px;
-    border-collapse: separate;
-    }
-    .between {
-    border: 0.5px dashed #C71585;
-    margin-left:10px;
-    margin-right:10px;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: none;
+  border: 2px solid #C71585;
+  margin-left: 20%;
+  margin-top: -10%;
+  text-align: center;
+  font-size: 150%;
 }
 
-#rbk{
+table {
+  margin-left: 5%;
+  border-spacing: 50px;
+  border-collapse: separate;
+}
+
+.between {
+  border: 0.5px dashed #C71585;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#rbk {
   float: left;
-  max-width:15%; 
+  max-width: 15%;
   margin-top: 0px;
   padding-left: 0px;
-  height:auto;
+  height: auto;
 }
 
-#navbarCollapse{
+#navbarCollapse {
   float: right;
   align: center;
   margin-top: 3%;
 }
 
-.fm{
-   margin-right: 0px;
+.fm {
+  margin-right: 0px;
 }
-#d{
+
+#d {
   float: right;
 }
-#sign{
+
+#sign {
   background-color: none;
   border: white;
 }
-p{
+
+p {
   left: 20%;
   color: white;
 }
-#last{
-  left:30%;
+
+#last {
+  left: 30%;
 }
-.navbar-header{
+
+.navbar-header {
   border: 0 !important;
-  background: 0 !important; 
+  background: 0 !important;
   color: #333 !important;
   background: none !important;
   box-shadow: none !important;
   background-color: white;
 }
-.navbar-default{
-   border: 0 !important;
-   background: none !important;
-   box-shadow: none !important;
-   background-color:white;
-   border-color: none;
-}
-h2{
-  color:#C71585;
+
+.navbar-default {
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  background-color: white;
+  border-color: none;
 }

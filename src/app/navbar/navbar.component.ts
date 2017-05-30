@@ -11,8 +11,8 @@ import { AuthService } from '../home/user/service/auth.service';
 export class NavbarComponent implements OnInit{
     public userAccessTest:any;
            flage=true;
-  constructor(private router: Router , private auth : AuthService ) { 
-  
+  constructor(private router: Router , private auth : AuthService ) {
+
 }
 
   ngOnInit() {
@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit{
   }
 
   testUser(){
-  console.log(localStorage.getItem('id_token'))
+  // console.log(localStorage.getItem('id_token'))
       if(localStorage.getItem('id_token')!==null){
         return true
       }

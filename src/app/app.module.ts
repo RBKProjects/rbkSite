@@ -27,6 +27,7 @@ import { AnaAssComponent } from './home/user/auth/ana-ass/ana-ass.component';
 
 import { ConUserGuard } from './con-user.guard';
 import { UpdateInfoComponent } from './update-info/update-info.component';
+import { ProgressComponent } from './progress/progress.component';
 
 
 
@@ -48,7 +49,9 @@ import { UpdateInfoComponent } from './update-info/update-info.component';
     MindestAssComponent,
     AnaAssComponent,
 
-    UpdateInfoComponent
+    UpdateInfoComponent,
+
+    ProgressComponent
 
     
 
