@@ -16,7 +16,7 @@ module.exports = {
                 if (err) {
                     res.status(500).send(err);
                 }else{
-                    questionModel.findByIdAndUpdate(question.QuestionModelId, {$push: { "multiChoiceQ": data.id}}, (err,data)=>{
+                    questionModel.findByIdAndUpdate(question.QuestionModelId, {$push: { "multiChoiceQ": data.id}},{ 'new': true}, (err,data)=>{
                         res.json(data)
                     });
                 }  

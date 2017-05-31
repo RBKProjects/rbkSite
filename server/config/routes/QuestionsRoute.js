@@ -14,9 +14,9 @@ const Router = express.Router();
 //=============================================================================
 /*									QuestionsRoute			   				 */
 //=============================================================================
-   Router.route('/add').post(MultiChoice.addMultiChoiceQ);
-   Router.route('/edit').post(MultiChoice.editMultiChoiceQ);
-   Router.route('/delete').post(MultiChoice.removeMultiChoiceQ);
+   Router.route('/addM').post(MultiChoice.addMultiChoiceQ);
+   Router.route('/editM').post(MultiChoice.editMultiChoiceQ);
+   Router.route('/deleteM').post(MultiChoice.removeMultiChoiceQ);
 
 //=============================================================================
 /*									fillQuestionRoute  			   			 */
@@ -31,5 +31,15 @@ const Router = express.Router();
     Router.route('/addTrueFalseQ').post(TrueFalse.addTueFalseQ);
     Router.route('/editTrueFalseQ').post(TrueFalse.editTueFalseQ);
     Router.route('/deleteTrueFalseQ').post(TrueFalse.removeTueFalseQ);
+
+    /////// get questions for specific test
+    Router.route('/getques/:testid').get(Questions.sendQuestions);
+    
+
+
+
+    //// answers
+    Router.route('/addTrueFalseA').post(TrueFalse.addTueFalseA);
+    
 
 module.exports = Router
