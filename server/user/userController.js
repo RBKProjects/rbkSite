@@ -16,9 +16,9 @@ module.exports = {
 				res.json({isUserExist : true })
 			}else {
 
-				userModel.create(userModel, (err, data)=> {
+				userModel.create(userData, (err, data)=> {
 					if (err) {
-						console.log(userData)
+						console.log(data)
 						res.status(500).send(err);
 					}else{
 						//	helper.verify(data.email, data.emailCode);
