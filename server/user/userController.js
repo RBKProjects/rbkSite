@@ -10,7 +10,7 @@ module.exports = {
 	signup : (req, res) => {
 		let userData  = req.body.user;
 		//userData.emailCode = helper.randCode();
-		//console.log(userData)
+		console.log(userData)
 		userModel.findOne({email : userData.email}, (err, userEX)=>{
 			if (userEX) {
 				res.json({isUserExist : true })
@@ -18,6 +18,7 @@ module.exports = {
 
 				userModel.create(userModel, (err, data)=> {
 					if (err) {
+						console.log(userData)
 						res.status(500).send(err);
 					}else{
 						//	helper.verify(data.email, data.emailCode);

@@ -72,7 +72,7 @@ import { ProgressComponent } from './progress/progress.component';
   { path: 'esignin', component: SigninemployeeComponent },
 
   { path: 'test', component: TestviewComponent },
-  { path: 'interview', component: InterviewComponent,canActivate:[ConUserGuard] },
+  { path: 'interview', component: InterviewComponent},
   { path: 'minAss', component: MindestAssComponent},
   { path: 'anaAss', component: AnaAssComponent },
 
