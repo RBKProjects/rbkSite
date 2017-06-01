@@ -10,10 +10,10 @@
        <br>
      </div>
 <div class="form-group"  >
-  <form [formGroup]="updateInfo" novalidate (ngSubmit)="updateInfo.valid && updateCandidateInfo(updateInfo.value)"> 
+  <form [formGroup]="updateInfo" novalidate (ngSubmit)="updateInfo.valid && updateCandidateInfo(updateInfo.value)">
             <label>First Name </label>
             <input id="firstName"  type="textbox" class="form-control"  formControlName="firstName" placeholder="First name..">
-      
+
         <div class="form-group">
             <label >Last Name </label>
             <input  id="lastName" type="textbox" class="form-control"  formControlName="lastName" placeholder="Last name..">
@@ -28,7 +28,16 @@
         </div>
         <div class="form-group">
             <label>Nationality </label>
-            <input type="textbox" id="nationality" class="form-control" formControlName="nationality" placeholder="Nationality..">
+            <select name="nationality" class="form-control"   formControlName="nationality">
+                <option *ngFor="let nationality of nationalities" [value]="nationality">{{nationality}}</option>
+             </select>
+            <!-- <input type="textbox" id="nationality" class="form-control" formControlName="nationality" placeholder="Nationality.."> -->
+        </div>
+        <div class="form-group" *ngif="nationalities[0]">
+            <label>Are You a Refugee? </label>
+          <select name="isRefugee" class="form-control" formControlName="isRefugee">
+               <option *ngFor="let iR of isRefugee" [ngValue]="iR">{{iR}}</option>
+            </select>
         </div>
         <div class="form-group">
             <label>City of Residence </label>
@@ -66,12 +75,7 @@
                <option *ngFor="let cE of codeExperience" [ngValue]="cE">{{cE}}</option>
             </select>
         </div>
-        <div class="form-group">
-            <label>Are You a Refugee? </label>
-          <select name="isRefugee" class="form-control" formControlName="isRefugee">
-               <option *ngFor="let iR of isRefugee" [ngValue]="iR">{{iR}}</option>
-            </select>
-        </div>
+
         <input class="btn btn-default btn-block"   [disabled]='!updateInfo.valid' type='submit' value="Update">
         </form>
          </div>
@@ -79,7 +83,3 @@
           </div>
   </div>
  </div>
-
-
-       
- 
