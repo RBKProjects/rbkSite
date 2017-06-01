@@ -19,8 +19,8 @@ export class UpdateInfoComponent implements OnInit {
 
 
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
-  
-  
+
+
   ngOnInit() {
  this.updateInfo = this.formBuilder.group({
       firstName: ['', Validators.required],
@@ -38,13 +38,20 @@ export class UpdateInfoComponent implements OnInit {
       );
 
   }
-  
+
   private genders : string[] = [
   'Female',
   'Male',
   'Other'
   ];
-  
+
+  private nationalities : string[] = [
+  'Jordanian',
+  'Syrian',
+  'Palestinian',
+  'Other'
+  ];
+
   private englishAbility : string[] = [
   '1-No English',
   '2-I can speak & read a little',
@@ -52,7 +59,7 @@ export class UpdateInfoComponent implements OnInit {
   '4-I can have a technical conversation with a native speaker',
   "5-I'm a native speaker"
   ];
-  
+
   private educationLevel : string[] = [
   'Some High School' ,
   'High School Graduate' ,
@@ -61,21 +68,21 @@ export class UpdateInfoComponent implements OnInit {
   'University Graduate (4+ Year Undergraduate Degree) ' ,
   'Masters Degree ', 'PhD ' ,'Other',
   ];
-  
+
   private knowRBK : string[] = [
   'From a Friend', 'Email' , 'Event' ,  'Posters',  'Facebook',  'Web Search (Google, ect.)'];
-  
+
   private codeExperience : string[] = ['Yes' ,'No' ];
   private isRefugee : string[] = ['Yes' ,'No' ]
-  
-  
-  
+
+
+
   updateCandidateInfo(value: Object){
     console.log(value)
-  
+
      	this.authService.updateInfo(value,localStorage.getItem('user-id')).subscribe(data => {
       if(data){
-      
+
         console.log(data)
         // this.router.navigate(['/next']);
       }else {
@@ -86,4 +93,3 @@ export class UpdateInfoComponent implements OnInit {
   }
 
   }
-  
