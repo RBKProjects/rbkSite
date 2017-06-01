@@ -71,6 +71,7 @@ module.exports = {
         /*                                  Answers                                  */
         //=============================================================================
         addTueFalseA : (req, res)=>{
+            ///the answer will be here an array from the front end 
             let answer=req.body.answers;
             trueFalseAModel.create(answer, function (err, dataInserted) {
 				if (err) {

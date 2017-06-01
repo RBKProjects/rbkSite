@@ -40,6 +40,9 @@ const Router = express.Router();
 
     //// answers
     Router.route('/addTrueFalseA').post(TrueFalse.addTueFalseA);
+    Router.route('/addFillA').post(Fill.addFillA);
+    Router.route('/addMultiChoiceA').post(MultiChoice.addMultiChoiceA);
+    
     
 
 module.exports = Router
