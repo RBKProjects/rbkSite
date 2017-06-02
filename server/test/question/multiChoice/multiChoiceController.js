@@ -5,6 +5,8 @@ const multiChoiceQModel = require('./multiChoiceQModel.js');
 const multiChoiceAModel = require('./multiChoiceAModel.js');
 
 
+///////////
+const userModel = require('../../../user/userModel.js');
 
 
 module.exports = {
@@ -69,6 +71,26 @@ module.exports = {
     
     addMultiChoiceA : (req, res)=>{
         let answer=req.body.answers;
+        
+        
+        var arrOfQid=[];
+        for(let i=0;i<req.body.answers.length;i++){
+            arrOfQid.push(req.body.answers[i].QId)
+        }
+        var query = {'_id': req.body.answers[0].userId};
+        var doc = {$push: {answered:{ $each: arrOfQid } }};
+        
+        userModel.findOneAndUpdate(query,doc, { "new": true},function(err,data){
+            if(err){
+                res.json(err)
+            }else {
+                // res.json(data)
+            }
+        })
+        
+        
+        
+        
         multiChoiceAModel.create(answer, function (err, dataInserted) {
             if (err) {
                 res.status(404).send(err);

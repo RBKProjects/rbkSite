@@ -4,6 +4,9 @@ const questionModel = require('../questionModel.js');
 const trueFalseQModel = require('./trueFalseQModel.js');
 const trueFalseAModel = require('./trueFalseAModel.js');
 
+//////////////
+
+const userModel = require('../../../user/userModel.js');
 
 
 
@@ -73,12 +76,30 @@ module.exports = {
         addTueFalseA : (req, res)=>{
             ///the answer will be here an array from the front end 
             let answer=req.body.answers;
+            ////
+            var arrOfQid=[];
+            for(let i=0;i<req.body.answers.length;i++){
+                arrOfQid.push(req.body.answers[i].QId)
+            }
+            var query = {'_id': req.body.answers[0].userId};
+            var doc = {$push: {answered:{ $each: arrOfQid } }};
+            
+            userModel.findOneAndUpdate(query,doc, { "new": true},function(err,data){
+                if(err){
+                    res.json(err)
+                }else {
+                    // res.json(data)
+                }
+            })
+            
+            
+            
             trueFalseAModel.create(answer, function (err, dataInserted) {
-				if (err) {
-					res.status(404).send(err);
-				}else{
-					res.status(201).json(dataInserted);
-				}
+                if (err) {
+                    res.status(404).send(err);
+                }else{
+                    res.status(201).json(dataInserted);
+                }
             })
             
             

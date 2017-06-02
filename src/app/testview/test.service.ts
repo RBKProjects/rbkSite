@@ -13,7 +13,7 @@ export class TestService {
      let params="592ec314c90b102090df3104";
       let headers = new Headers();
       headers.append('Content-Type','application/json');
-      return this.http.get('api/test/questions/getques/'+ params, {headers: headers})
+      return this.http.get('api/test/questions/getques/'+ params +"/"+localStorage.getItem('user-id'), {headers: headers})
       .map(res => res.json());
      }
 
