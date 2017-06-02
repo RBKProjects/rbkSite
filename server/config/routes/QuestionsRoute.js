@@ -33,7 +33,7 @@ const Router = express.Router();
     Router.route('/deleteTrueFalseQ').post(TrueFalse.removeTueFalseQ);
 
     /////// get questions for specific test
-    Router.route('/getques/:testid').get(Questions.sendQuestions);
+    Router.route('/getques/:testid/:userid').get(Questions.sendQuestions);
     
 
 

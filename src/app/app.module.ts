@@ -28,6 +28,7 @@ import { AnaAssComponent } from './home/user/auth/ana-ass/ana-ass.component';
 import { ConUserGuard } from './con-user.guard';
 import { UpdateInfoComponent } from './update-info/update-info.component';
 import { ProgressComponent } from './progress/progress.component';
+import { TestService } from './testview/test.service';
 
 
 
@@ -77,7 +78,7 @@ import { ProgressComponent } from './progress/progress.component';
   { path: 'anaAss', component: AnaAssComponent },
 
   { path: 'esignin', component: EmployeeFbLoginComponent },
-  { path: 'test', component: TestviewComponent },
+  // { path: 'test', component: TestviewComponent },
 
  // { path: 'updateinfo', component: UpdateInfoComponent }
 
@@ -90,7 +91,7 @@ import { ProgressComponent } from './progress/progress.component';
 ])
   ],
 
-  providers: [{provide:LocationStrategy,useClass:HashLocationStrategy},AuthService,EAuthService],
+  providers: [{provide:LocationStrategy,useClass:HashLocationStrategy},AuthService,EAuthService,TestService],
 
   bootstrap: [AppComponent]
 })

@@ -58,35 +58,37 @@ const UserSchema = new mongoose.Schema({
 		type: String
 	},
 	// emailCode : {
-	// 	type: String
-	// },
-	isEmailVerified: {
-		type: Boolean
-	},
-	FbID: {
-		type: String,
-		unique: true
-	},
-	isLoggedIn: {
-		type: Boolean,
-		default: false
-	},
-	cohort: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Cohort'
-	},
-	isStudent: {
-		type: Boolean,
-		default: false
-	},
-	progress: {
-		type: Number,
-		default: 0
-	},
-	syudentNumber: {
-		type: Number
-	}
-});
-
-const User = mongoose.model('User', UserSchema);
-module.exports = User;
+		// 	type: String
+		// },
+		isEmailVerified: {
+			type: Boolean
+		},
+		FbID: {
+			type: String,
+			unique: true
+		},
+		isLoggedIn: {
+			type: Boolean,
+			default: false
+		},
+		cohort: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Cohort'
+		},
+		isStudent: {
+			type: Boolean,
+			default: false
+		},
+		progress: {
+			type: Number,
+			default: 0
+		},
+		syudentNumber: {
+			type: Number
+		},
+		answered:[]
+	});
+	
+	const User = mongoose.model('User', UserSchema);
+	module.exports = User;
+	
