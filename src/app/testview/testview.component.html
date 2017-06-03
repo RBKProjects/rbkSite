@@ -1,3 +1,46 @@
 <p>
   testview works!
 </p>
+
+
+
+    <div class="container">
+  <div class="con">
+   <div >
+  	 <img src="assets/analytical.jpg" class="img-responsive"/>
+   </div>
+   <div class="inside">
+	   <div class="col-md-12">
+		   <h3 >Test</h3>
+       <br>
+	   </div>
+     <div class="inside2">
+	  	 <div *ngFor="let tf of multi; let i=index" >{{i+1}}{{". "}}{{tf.english}}{{"-"}}{{tf.arabic}}
+        
+        <br> 
+            <label class="r1" >1 </label> 
+            <label class="r">2 </label>
+            <label class="r">3 </label>
+            <label class="r" >4 </label>
+            <label class="r" >5 </label>
+        <br>
+         <div class="x">
+          <p>Strongly Agree</p> 
+            <form>
+             <input type="radio" name="optradio" class="radio-inline">
+             <input type="radio" name="optradio" class="radio-inline"> 
+             <input type="radio" name="optradio" class="radio-inline">   
+             <input type="radio" name="optradio" class="radio-inline">
+             <input type="radio" name="optradio" class="radio-inline">  
+            </form>
+         <p>Strongly Disagree</p>
+
+       </div>
+        <br>
+        <br>
+      </div>
+      <br>
+    </div>
+    </div>
+</div>
+</div>

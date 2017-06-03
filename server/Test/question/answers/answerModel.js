@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
 
-const MultiChoiceASchema = new mongoose.Schema({
+const AnswerSchema = new mongoose.Schema({
 	name : {
 		type : String
 		// required : true
@@ -18,5 +18,5 @@ const MultiChoiceASchema = new mongoose.Schema({
 	}
 })
 
-const MultiChoiceA = mongoose.model('MultiChoiceA', MultiChoiceASchema);
-module.exports = MultiChoiceA;
+const Answer = mongoose.model('Answer', AnswerSchema);
+module.exports = Answer;

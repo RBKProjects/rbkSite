@@ -33,13 +33,16 @@ const Router = express.Router();
     Router.route('/deleteTrueFalseQ').post(TrueFalse.removeTueFalseQ);
 
     /////// get questions for specific test
-    Router.route('/getques/:testid').get(Questions.sendQuestions);
+    Router.route('/getques/:testid/:userid').get(Questions.sendQuestions);
     
 
 
 
     //// answers
     Router.route('/addTrueFalseA').post(TrueFalse.addTueFalseA);
+    Router.route('/addFillA').post(Fill.addFillA);
+    Router.route('/addMultiChoiceA').post(MultiChoice.addMultiChoiceA);
+    
     
 
 module.exports = Router
