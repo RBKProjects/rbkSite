@@ -36,8 +36,8 @@ private fill = [];
 
         console.log(this.quest,"the array quest")
         console.log(this.TF,"the  t f")
-        console.log(this.multi,"the fill ")
-        console.log(this.fill,"the multii")
+        console.log(this.multi," the multii")
+        console.log(this.fill,"the fill")
         
       }
       else{
