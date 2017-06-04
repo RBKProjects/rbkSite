@@ -25,7 +25,7 @@ export class TestviewComponent implements OnInit {
   
   private answers =[];
   public arrayData=[];
-  
+ public dataflag= true;
   private id =localStorage.getItem('user-id');
   arr = new FormArray([]);
   
@@ -79,6 +79,10 @@ export class TestviewComponent implements OnInit {
   
   getquestions(){
     this.testservice.getques().subscribe(data => {
+      if(data.length<1){
+ this.dataflag= false;
+        
+      }
       if (data){
         this.arrayData=data;
         //// add data to the form 

@@ -38,7 +38,9 @@
         <hr>
       </div>
     </div>
-      <input type="submit" value="Next" [disabled]='!form.valid' (click)="showform()">
+      <input type="submit" value="Next" [disabled]='!form.valid' (click)="showform()" *ngIf="dataflag">
+      <input type="submit" value="Finish Assessment"  *ngIf="!dataflag">
+      
 
   </form>
     </div>
