@@ -36,7 +36,7 @@ const UserSchema = new mongoose.Schema({
 	conEmail: {
 		type: String,
 		//required : true
-		unique: true
+		// unique: true
 	},
 	dateOfBirth: {
 		type: String
@@ -65,7 +65,7 @@ const UserSchema = new mongoose.Schema({
 		},
 		FbID: {
 			type: String,
-			unique: true
+			// unique: true
 		},
 		isLoggedIn: {
 			type: Boolean,

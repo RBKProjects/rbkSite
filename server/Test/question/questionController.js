@@ -48,6 +48,7 @@ module.exports = {
         
         
         questionModel.findOne({"test":testid},function(err,data){
+            console.log(err)
             if (err){
                 res.json(err)
             }else{
