@@ -28,11 +28,11 @@
         </div>
         <div class="form-group">
             <label>Nationality </label>
-            <select name="nationality" class="form-control" formControlName="nationality">
+            <select name="nationality" class="form-control" formControlName="nationality" (change)="check($event.target.value)">
                  <option *ngFor="let nationality of nationalities" [ngValue]="nationality">{{nationality}}</option>
               </select>
         </div>
-        <div class="form-group">
+        <div class="form-group" *ngIf="refugeeFlag">
             <label>Are You a Refugee? </label>
           <select name="isRefugee" class="form-control" formControlName="isRefugee">
                <option *ngFor="let iR of isRefugee" [ngValue]="iR">{{iR}}</option>
