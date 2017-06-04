@@ -1,15 +1,18 @@
-<p>
-  testview works!
-</p>
 
+    
 
-
-
-
-
-
-  <h3>Select Gender</h3>
-  <form [formGroup]="form" novalidate (ngSubmit)="form.valid && showform()" >
+    <div class="container">
+  <div class="con">
+   <div >
+  	 <img src="assets/analytical.jpg" class="img-responsive"/>
+   </div>
+   <div class="inside">
+	   <div class="col-md-12">
+		   <h3 >Test</h3>
+       <br>
+	   </div>
+     <div class="inside2">
+   <form [formGroup]="form" novalidate (ngSubmit)="form.valid && showform()" >
     <div formArrayName="answers">
       <div *ngFor="let entry of arrayData; let i=index">{{i+1}}{{". "}}{{entry.english}}{{"-"}}{{entry.arabic}}
         <div>{{entry._id}}</div>
@@ -22,12 +25,12 @@
          <div class="x">
       
           <p>Strongly Agree</p> 
-
+          <fieldset>
       <input type="radio"  [formControlName]="i"  value="{answer:1,QId:{{entry._id}}, userId: {{id}}  }" class="radio-inline" >
       <input type="radio"  [formControlName]="i"  value="{answer:2,QId:{{entry._id}}, userId: {{id}}  }" class="radio-inline" >
       <input type="radio"  [formControlName]="i"  value="{answer:3,QId:{{entry._id}}, userId: {{id}}  }" class="radio-inline" >
-      <input type="radio"  [formControlName]="i" value="{answer:4,QId:{{entry._id}}, userId:  {{id}}  }" class="radio-inline">
-      
+      <input type="radio"  [formControlName]="i"  value="{answer:4,QId:{{entry._id}}, userId: {{id}}  }" class="radio-inline">
+          </fieldset>
          <p>Strongly Disagree</p>
 
        </div>
@@ -35,16 +38,19 @@
         <hr>
       </div>
     </div>
+      <input type="submit" value="Next" [disabled]='!form.valid' (click)="showform()">
+
   </form>
-  <div>data: {{form.value | json}}</div>
-  <input type="submit" value="show" [disabled]='!form.valid' (click)="showform()">
+    </div>
+    </div>
+</div>
+</div>
 
-
-
-
+<!--///////////-->
+<!--old-->
     
-
-    <!--<div class="container">
+<!--
+    <div class="container">
   <div class="con">
    <div >
   	 <img src="assets/analytical.jpg" class="img-responsive"/>
@@ -57,8 +63,6 @@
      <div class="inside2">
        
 	  	 <div *ngFor="let q of quest; let i=index" >{{i+1}}{{". "}}{{q.english}}{{"-"}}{{q.arabic}}
-
-
         <br> 
             <label class="r1" >1 </label> 
             <label class="r">2 </label>
@@ -74,7 +78,6 @@
              <input type="radio" name="optradio" class="radio-inline">
             </form>
          <p>Strongly Disagree</p>
-
        </div>
         <br>
         <br>
