@@ -17,4 +17,11 @@ export class TestService {
       .map(res => res.json());
      }
 
+  sendanswer() { 
+      let headers = new Headers();
+      headers.append('Content-Type','application/json');
+      return this.http.post('api/test/questions/getques/' +"/"+localStorage.getItem('user-id'), {headers: headers})
+      .map(res => res.json());
+     }
+
 }
