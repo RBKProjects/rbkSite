@@ -48,10 +48,11 @@ module.exports = {
         
         
         questionModel.findOne({"test":testid},function(err,data){
+            console.log(err)
             if (err){
                 res.json(err)
             }else{
-                let arrofQ={};
+                let arrofQ=[];
                 if (data.multiChoiceQ.length){
                     let query=[];
                     for(let i =0;i<data.multiChoiceQ.length;i++){
@@ -64,7 +65,12 @@ module.exports = {
                     , function(err,data){
                         if(err){res.json(err)}
                         else{
-                            arrofQ["multi"]=data
+                            // arrofQ["multi"]=data
+                            // arrofQ.push(data) 
+                            for(let i =0 ;i<data.length;i++){
+                                arrofQ.push(data[i]) 
+                            }
+                            
                         }
                     })
                 }
@@ -82,7 +88,10 @@ module.exports = {
                         if(err){res.json(err)}
                         else{
                             // arrofQ.push(data) 
-                            arrofQ["fill"]=data
+                            // arrofQ["fill"]=data
+                            for(let i =0 ;i<data.length;i++){
+                                arrofQ.push(data[i]) 
+                            }
                             
                         }
                     }) 
@@ -97,9 +106,14 @@ module.exports = {
                     {'_id': {$nin: useranswer}}
                     ).then( function(data){  
                         // arrofQ.push(data) 
-                        arrofQ["TF"]=data
-                        
+                        // arrofQ["TF"]=data
+                        for(let i =0 ;i<data.length;i++){
+                            arrofQ.push(data[i]) 
+                        }
                         // console.log(arrofQ[multi])
+                        if(arrofQ.length>5){
+                            arrofQ=arrofQ.slice(0,5)
+                        }
                         res.json(arrofQ)
                         //// here we are sending an object inside it objects contain array of ques
                     })) 

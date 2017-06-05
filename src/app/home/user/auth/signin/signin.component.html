@@ -45,7 +45,12 @@
                        <div *ngIf="signinForm.controls.password.hasError('minlength')">Password isn't long enough.</div></div>
                        <p class="sign">Forget your password?</p>
                     <input type="submit" class="btn btn-primary btn-block" [disabled]='!signinForm.valid' value="Sign In">
-                  
+                  <div *ngIf="flagpass" >
+                    <label style="color:red">The password is incorrect</label>
+                  </div>
+                   <div *ngIf="flagemail" >
+                    <label style="color:red">The email is incorrect</label>
+                  </div>
                   <br>
                   <div class="col-md-12">
                      <div class="col-md-6"><h5>Sign up with one click</h5></div>

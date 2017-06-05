@@ -10,10 +10,17 @@ export class TestService {
 
 
    getques() { 
-     let params="592ec314c90b102090df3104";
+     let params="5934067bea76ce20d0c33641";///here we will put the test id
       let headers = new Headers();
       headers.append('Content-Type','application/json');
       return this.http.get('api/test/questions/getques/'+ params +"/"+localStorage.getItem('user-id'), {headers: headers})
+      .map(res => res.json());
+     }
+
+  sendanswer(data) { 
+      let headers = new Headers();
+      headers.append('Content-Type','application/json');
+      return this.http.post('api/test/answer/addAnswer',data, {headers: headers})
       .map(res => res.json());
      }
 
