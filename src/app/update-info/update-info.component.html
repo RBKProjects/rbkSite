@@ -35,7 +35,7 @@
         <div class="form-group" *ngIf="refugeeFlag">
             <label>Are You a Refugee? </label>
           <select name="isRefugee" class="form-control" formControlName="isRefugee">
-               <option *ngFor="let iR of isRefugee" [ngValue]="iR">{{iR}}</option>
+               <option *ngFor="let iR of isRefugee" [ngValue]="No || iR">{{iR}}</option>
             </select>
         </div>
         <div class="form-group">

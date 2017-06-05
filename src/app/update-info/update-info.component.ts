@@ -33,7 +33,7 @@ export class UpdateInfoComponent implements OnInit {
       knowRBK: ['', Validators.required],
       educationLevel: ['', Validators.required],
       codeExperience: ['', Validators.required],
-      isRefugee: ['', Validators.required],
+      isRefugee: [''],
       gender: ['', Validators.required]},
       );
       
