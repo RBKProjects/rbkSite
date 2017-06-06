@@ -4,10 +4,10 @@ const CohortSchema = new mongoose.Schema({
 	number : {
 		type : Number,
 		required : true
-    },
-    name : {
-        type : String
-    },
+	},
+	name : {
+		type : String
+	},
 	place : {
 		type : String,
 		//required : true
@@ -23,8 +23,12 @@ const CohortSchema = new mongoose.Schema({
 	},
 	graduationDate : {
 		type : Date,
+	},
+	created_at:{
+		type: Date,
+		default: Date.now
 	}
-
+	
 })
 
 const Cohort = mongoose.model('Cohort', CohortSchema);
