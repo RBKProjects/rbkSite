@@ -14,8 +14,13 @@ export class ProgressComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.setClass1() 
+    this.setClass2() 
+    this.setClass3() 
+    this.setClass4() 
+    this.setClass5() 
   }
-
+  
   
   setClass1() {
     if(this.progress === "1"){
@@ -31,8 +36,8 @@ export class ProgressComponent implements OnInit {
     }else if (this.progress === "2"){
       return "col-xs-1 bs-wizard-step  active"
     }
-     return "col-xs-1 bs-wizard-step  disabled"
-
+    return "col-xs-1 bs-wizard-step  disabled"
+    
     
   }
   setClass3() {
@@ -41,7 +46,7 @@ export class ProgressComponent implements OnInit {
     }else if (this.progress === "3"){
       return "col-xs-1 bs-wizard-step  active"
     }
-     return "col-xs-1 bs-wizard-step  disabled"
+    return "col-xs-1 bs-wizard-step  disabled"
     
   }
   setClass4() {
@@ -50,7 +55,7 @@ export class ProgressComponent implements OnInit {
     }else if (this.progress === "4"){
       return "col-xs-1 bs-wizard-step  active"
     }
-     return "col-xs-1 bs-wizard-step  disabled"
+    return "col-xs-1 bs-wizard-step  disabled"
     
   }
   setClass5() {
@@ -58,7 +63,7 @@ export class ProgressComponent implements OnInit {
       return "col-xs-1 bs-wizard-step  complete"
       
     }
-     return "col-xs-1 bs-wizard-step  disabled"
+    return "col-xs-1 bs-wizard-step  disabled"
     
   }
 }

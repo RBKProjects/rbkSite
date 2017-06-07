@@ -71,6 +71,7 @@ export class SigninComponent implements OnInit {
     console.log(value)
     this.user=value;
     this.authService.signin(this.user).subscribe(data => {
+       console.log(data)
       if(data.isUser === false){ // test if the data from backend that has token ...
         // if the user is not in DB first go to signup page to registe ...
         if(this.flagemail !== true){
@@ -91,8 +92,10 @@ export class SigninComponent implements OnInit {
         
         
       }else{
+        console.log(data)
         this.authService.storeInLocalStorage(data.token , data.id , data.userName); // store that data in localStorage ...
-        if(data.progress === 1){
+        localStorage.setItem("progress",data.progress)
+        if(data.progress === "1"){
           this.router.navigate(['/updateinfo']);
         }else if(data.progress === 2){
           this.router.navigate(['/minAss']);

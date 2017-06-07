@@ -33,7 +33,7 @@ module.exports = {
 						// res.json(data);
 						let token = jwt.encode(data, 'secret');
 						res.setHeader('x-access-token', token);
-						res.json({ token: token, id: data._id, userName: data.firstName + " " + data.lastName ,progress:data.progress})
+						res.json({ token: token, id: data._id, userName: data.firstName + " " + data.lastName ,progress:"1"})
 					}
 				});
 			}
@@ -87,7 +87,7 @@ module.exports = {
 						} else {
 							let token = jwt.encode(user, 'secret');
 							res.setHeader('x-access-token', token);
-							res.json({ token: token, id: user._id, userName: user.firstName + " " + user.lastName });
+							res.json({ token: token, id: user._id, userName: user.firstName + " " + user.lastName,progress:"1" });
 						}
 					});
 				}else{
