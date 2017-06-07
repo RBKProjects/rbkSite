@@ -3,6 +3,7 @@ const userModel = require('./userModel.js');
 const mongoose = require ('mongoose');
 const helper = require('../config/helper.js')
 
+const cohortModel = require('../cohort/cohortModel.js')
 
 
 module.exports = {
@@ -10,6 +11,12 @@ module.exports = {
 	signup : (req, res) => {
 		let userData  = req.body.user;
 		//userData.emailCode = helper.randCode();
+		let lastCohortID;
+		
+		cohortModel.findOne({}, {}, { sort: { 'created_at' : -1 } }, function(err, data) {
+			userData["cohort"]=data._id
+		});
+		
 		userModel.findOne({email : userData.email}, (err, userEX)=>{
 			if (userEX) {
 				res.json({isUserExist : true })
@@ -26,7 +33,7 @@ module.exports = {
 						// res.json(data);
 						let token = jwt.encode(data, 'secret');
 						res.setHeader('x-access-token', token);
-						res.json({ token: token, id: data._id, userName: data.firstName + " " + data.lastName })
+						res.json({ token: token, id: data._id, userName: data.firstName + " " + data.lastName ,progress:data.progress})
 					}
 				});
 			}

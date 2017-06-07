@@ -4,52 +4,52 @@
   </div>
   <div class="container" style="margin-left:80px;">
     <div class="row bs-wizard text-center" style="border-bottom:0;">
-      <div class="col-xs-1 bs-wizard-step complete">
+      <div [ngClass]="setClass1()">
         <div class="text-center bs-wizard-stepnum">Step 1</div>
         <div class="progress">
           <div class="progress-bar"></div>
         </div>
-        <a  [routerLink]="['/signup']" class="bs-wizard-dot">1</a>
+        <a class="bs-wizard-dot">1</a>
         <div class="bs-wizard-info text-center">Create Account</div>
       </div>
 
-      <div class="col-xs-1 bs-wizard-step active">
+      <div  [ngClass]="setClass2()">
         <!-- complete -->
         <div class="text-center bs-wizard-stepnum">Step 2</div>
         <div class="progress">
           <div class="progress-bar"></div>
         </div>
-        <a href="#" [routerLink]="['/updateinfo']" class="bs-wizard-dot">2</a>
+        <a  class="bs-wizard-dot">2</a>
         <div class="bs-wizard-info text-center">Complete Info</div>
       </div>
 
-      <div class="col-xs-1 bs-wizard-step active">
+      <div  [ngClass]="setClass3()">
         <!-- complete-->
         <div class="text-center bs-wizard-stepnum">Step 3</div>
         <div class="progress">
           <div class="progress-bar"></div>
         </div>
-        <a  [routerLink]="['/minAss']" class="bs-wizard-dot">3</a>
-        <div class="bs-wizard-info text-center">Mindset Assessment</div>
+        <a  class="bs-wizard-dot">3</a>
+        <div class="bs-wizard-info text-center" >Mindset Assessment</div>
       </div>
 
-      <div class="col-xs-1 bs-wizard-step active">
+      <div  [ngClass]="setClass4()">
         <!-- complete -->
         <div class="text-center bs-wizard-stepnum">Step 4</div>
         <div class="progress">
           <div class="progress-bar"></div>
         </div>
-        <a href="#" [routerLink]="['/anaAss']" class="bs-wizard-dot">4</a>
+        <a  class="bs-wizard-dot">4</a>
         <div class="bs-wizard-info text-center">Analytical Assessment</div>
       </div>
 
-      <div class="col-xs-1 bs-wizard-step active">
+      <div class="col-xs-1 bs-wizard-step  disabled" [ngClass]="setClass5()">
         <!-- complete -->
         <div class="text-center bs-wizard-stepnum">Step 5</div>
         <div class="progress">
           <div class="progress-bar"></div>
         </div>
-        <a href="#" [routerLink]="['/interview']" class="bs-wizard-dot">5</a>
+        <a class="bs-wizard-dot">5</a>
         <div class="bs-wizard-info text-center">Agreement</div>
       </div>
     </div>
