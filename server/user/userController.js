@@ -33,7 +33,7 @@ module.exports = {
 						// res.json(data);
 						let token = jwt.encode(data, 'secret');
 						res.setHeader('x-access-token', token);
-						res.json({ token: token, id: data._id, userName: data.firstName + " " + data.lastName ,progress:"1"})
+						res.json({ token: token, id: data._id, userName: data.firstName + " " + data.lastName ,progress:data.progress})
 					}
 				});
 			}
@@ -87,7 +87,7 @@ module.exports = {
 						} else {
 							let token = jwt.encode(user, 'secret');
 							res.setHeader('x-access-token', token);
-							res.json({ token: token, id: user._id, userName: user.firstName + " " + user.lastName,progress:"1" });
+							res.json({ token: token, id: user._id, userName: user.firstName + " " + user.lastName,progress:user.progress});
 						}
 					});
 				}else{
@@ -118,11 +118,12 @@ module.exports = {
 				user.knowRBK = req.body.knowRBK || user.knowRBK;
 				user.codeExperience = req.body.codeExperience || user.codeExperience;
 				user.isRefugee = req.body.isRefugee || user.isRefugee;
+				user.progress=2;
 				user.save((err, savedUser)=>{
 					if(err){
 						res.status(500).send(err);
 					} else {
-						res.json(savedUser);
+						res.json({savedUser:savedUser,progress:user.progress});
 					}
 				});
 			}

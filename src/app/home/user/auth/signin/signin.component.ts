@@ -95,7 +95,7 @@ export class SigninComponent implements OnInit {
         console.log(data)
         this.authService.storeInLocalStorage(data.token , data.id , data.userName); // store that data in localStorage ...
         localStorage.setItem("progress",data.progress)
-        if(data.progress === "1"){
+        if(data.progress === 1){
           this.router.navigate(['/updateinfo']);
         }else if(data.progress === 2){
           this.router.navigate(['/minAss']);

@@ -87,6 +87,7 @@ export class UpdateInfoComponent implements OnInit {
           
           console.log(data)
           // this.router.navigate(['/next']);
+          localStorage.setItem("progress",data.progress)
           this.router.navigate(['/minAss']);
         }else {
           this.router.navigate(['/signup']);
