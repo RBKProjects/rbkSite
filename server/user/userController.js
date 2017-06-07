@@ -12,7 +12,7 @@ module.exports = {
 		let userData  = req.body.user;
 		//userData.emailCode = helper.randCode();
 		let lastCohortID;
-		
+		userData["progress"]=2
 		cohortModel.findOne({}, {}, { sort: { 'created_at' : -1 } }, function(err, data) {
 			userData["cohort"]=data._id
 		});
@@ -23,7 +23,7 @@ module.exports = {
 			}else {
 				
 				userModel.create(userData, (err, data)=> {
-					console.log(err,data)
+					console.log(data.progress,"sign up")
 					if (err) {
 						console.log(data)
 						res.status(500).send(err);
@@ -118,7 +118,7 @@ module.exports = {
 				user.knowRBK = req.body.knowRBK || user.knowRBK;
 				user.codeExperience = req.body.codeExperience || user.codeExperience;
 				user.isRefugee = req.body.isRefugee || user.isRefugee;
-				user.progress=2;
+				user.progress=3;
 				user.save((err, savedUser)=>{
 					if(err){
 						res.status(500).send(err);

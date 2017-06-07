@@ -81,7 +81,7 @@ const UserSchema = new mongoose.Schema({
 		},
 		progress: {
 			type: Number,
-			default: 1
+			default: 2
 		},
 		syudentNumber: {
 			type: Number

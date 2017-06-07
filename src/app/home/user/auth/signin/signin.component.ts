@@ -95,15 +95,15 @@ export class SigninComponent implements OnInit {
         console.log(data)
         this.authService.storeInLocalStorage(data.token , data.id , data.userName); // store that data in localStorage ...
         localStorage.setItem("progress",data.progress)
-        if(data.progress === 1){
+        if(data.progress === 2){
           this.router.navigate(['/updateinfo']);
-        }else if(data.progress === 2){
+        }else if(data.progress === 3){
           this.router.navigate(['/minAss']);
           
-        }else if(data.progress === 3){
+        }else if(data.progress === 4){
           this.router.navigate(['/anaAss']);
           
-        }else if(data.progress === 4){
+        }else if(data.progress === 5){
           this.router.navigate(['/interview']);
           
         }

@@ -24,7 +24,6 @@ export class ProgressComponent implements OnInit {
   
   
   setClass1() {
-    // this.progress=Number(localStorage.getItem("progress") )
     if(Number(localStorage.getItem("progress") ) === 1 || localStorage.getItem("progress") === null){
       
       return "col-xs-1 bs-wizard-step active" 
