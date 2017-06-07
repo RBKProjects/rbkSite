@@ -15,26 +15,14 @@ export class ProgressComponent implements OnInit {
   
   ngOnInit() {
   }
-  checkprogress(){ 
-    if(this.progress >"1"){
-      
-    }
-    if(this.progress >"2"){
-      
-    }
-    if(this.progress >"3"){
-      
-    }
-    if(this.progress >"4"){
-      
-    }
-  }
+
   
   setClass1() {
-    if(this.progress >"1"){
-      return "col-xs-1 bs-wizard-step complete" 
-    }else{
-      return "col-xs-1 bs-wizard-step  disabled"
+    if(this.progress === "1"){
+      return "col-xs-1 bs-wizard-step active" 
+    }
+    else if(this.progress >"1"){
+      return "col-xs-1 bs-wizard-step  complete"
     }
   }
   setClass2() {
