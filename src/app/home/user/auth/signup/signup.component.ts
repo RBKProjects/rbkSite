@@ -53,6 +53,7 @@ export class SignupComponent implements OnInit {
       if(data){///need to refactor depend on the data from the back end 
        // this.signinCom.submitSignIn(value);
         this.authService.storeInLocalStorage(data.token , data.id , data.userName); // store that data in localStorage ...
+        localStorage.setItem("progress",data.progress)
         this.router.navigate(['/updateinfo']);
       }else {
         this.router.navigate(['/signup']);
