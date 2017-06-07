@@ -87,6 +87,7 @@ export class UpdateInfoComponent implements OnInit {
           
           console.log(data)
           // this.router.navigate(['/next']);
+          this.router.navigate(['/minAss']);
         }else {
           this.router.navigate(['/signup']);
         }
@@ -94,9 +95,12 @@ export class UpdateInfoComponent implements OnInit {
       
     }
     
-    check(deviceValue) {
-      if(deviceValue ==='0: Jordanian' ){
+    check(value) {
+      if(value ==='0: Jordanian' ){
         this.refugeeFlag=!this.refugeeFlag
+      }else if( value ==='1: Syrian' || value ==='2: Palestinian' || value ==='3: Other'){
+        this.refugeeFlag=true
+        
       }
     }
     
