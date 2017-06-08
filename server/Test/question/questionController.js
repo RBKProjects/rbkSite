@@ -36,6 +36,7 @@ module.exports = {
         let testid=req.params.testid;
         let userid=req.params.userid;
         let useranswer=[];
+        let finishflag=true;
         
         userModel.findById({_id:userid} , function(err,data){
             if(err){
@@ -48,7 +49,7 @@ module.exports = {
         
         
         questionModel.findOne({"test":testid},function(err,data){
-            console.log(err)
+            console.log(data)
             if (err){
                 res.json(err)
             }else{
@@ -112,12 +113,14 @@ module.exports = {
                         }
                         // console.log(arrofQ[multi])
                         if(arrofQ.length>5){
+                            finishflag=false
                             arrofQ=arrofQ.slice(0,5)
                         }
-                        res.json(arrofQ)
+                        res.json({arrofQ:arrofQ,finishflag:finishflag})
                         //// here we are sending an object inside it objects contain array of ques
                     })) 
                 }
+               
                 
             }
             

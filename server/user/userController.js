@@ -119,6 +119,7 @@ module.exports = {
 				user.codeExperience = req.body.codeExperience || user.codeExperience;
 				user.isRefugee = req.body.isRefugee || user.isRefugee;
 				user.progress=3;
+				user.cohort =user.cohort;
 				user.save((err, savedUser)=>{
 					if(err){
 						res.status(500).send(err);

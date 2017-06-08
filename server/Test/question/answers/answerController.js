@@ -14,7 +14,15 @@ module.exports = {
     //=============================================================================
     addAnswer : (req, res)=>{
         let answer=req.body.answers;
-        
+        if(req.body.finishtest==true){
+            userModel.findOneAndUpdate({'_id': req.body.answers[0].userId},{$inc: {progress:1}}, { "new": true},function(err,data){
+                if(err){
+                    res.json(err)
+                }else {
+                    // res.json(data)
+                }
+            }) 
+        }
         
         var arrOfQid=[];
         for(let i=0;i<req.body.answers.length;i++){
