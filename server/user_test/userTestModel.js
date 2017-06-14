@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
 
-const TestSchema = new mongoose.Schema({
+const UserTestSchema = new mongoose.Schema({
 	_id : {
 		type : String
 	},
@@ -18,7 +18,7 @@ const TestSchema = new mongoose.Schema({
     type : Number,
     default : 0
   }
-})
+});
 
-const Test = mongoose.model('Test', TestSchema);
-module.exports = Test;
+const UserTest = mongoose.model('User_Test', UserTestSchema);
+module.exports = UserTest;
