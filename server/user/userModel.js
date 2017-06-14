@@ -13,9 +13,6 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		//required : true
 	},
-	confirmPassword: {
-		type: String
-	},
 	phone: {
 		type: String
 	},
@@ -25,6 +22,9 @@ const UserSchema = new mongoose.Schema({
 	gender: {
 		type: String
 	},
+	city : {
+		type : String
+	},
 	isRefugee: {
 		type: String
 	},
@@ -32,11 +32,6 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		//required : true
 		unique: true
-	},
-	conEmail: {
-		type: String,
-		//required : true
-		// unique: true
 	},
 	dateOfBirth: {
 		type: String
@@ -57,38 +52,19 @@ const UserSchema = new mongoose.Schema({
 	codeExperience: {
 		type: String
 	},
-	// emailCode : {
-		// 	type: String
-		// },
-		isEmailVerified: {
-			type: Boolean
-		},
-		FbID: {
-			type: String,
-			// unique: true
-		},
-		isLoggedIn: {
-			type: Boolean,
-			default: false
-		},
-		cohort: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: 'Cohort'
-		},
-		isStudent: {
-			type: Boolean,
-			default: false
-		},
-		progress: {
-			type: Number,
-			default: 2
-		},
-		syudentNumber: {
-			type: Number
-		},
-		answered:[]
+	FbID: {
+		type: String,
+		// unique: true
+	},
+	isLoggedIn: {
+		type: Boolean,
+		default: false
+	},
+	cohort: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Cohort'
+	}
 	});
-	
+
 	const User = mongoose.model('User', UserSchema);
 	module.exports = User;
-	
