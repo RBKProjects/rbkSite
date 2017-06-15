@@ -36,19 +36,20 @@ module.exports = {
                 res.json(err)
             }else {
                 // res.json(data)
+                AnswerModel.create(answer, function (err, dataInserted) {
+                    if (err) {
+                        res.status(404).send(err);
+                    }else{
+                        res.status(201).json({dataInserted:dataInserted,progress:data.progress});
+                    }
+                })
+                
             }
         })
         
         
         
         
-        AnswerModel.create(answer, function (err, dataInserted) {
-            if (err) {
-                res.status(404).send(err);
-            }else{
-                res.status(201).json(dataInserted);
-            }
-        })
         
         
     }

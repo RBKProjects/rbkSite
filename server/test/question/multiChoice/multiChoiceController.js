@@ -17,10 +17,13 @@ module.exports = {
     addMultiChoiceQ : (req, res)=>{
         let question = req.body.question;
         multiChoiceQModel.create(question, (err, data)=> {
+            // console.log(data)
             if (err) {
                 res.status(500).send(err);
             }else{
+                console.log(question.QuestionModelId)
                 questionModel.findByIdAndUpdate(question.QuestionModelId, {$push: { "multiChoiceQ": data.id}},{ 'new': true}, (err,data)=>{
+                    // console.log(data,"data")
                     res.json(data)
                 });
             }  

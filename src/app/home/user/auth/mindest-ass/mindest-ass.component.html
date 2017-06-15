@@ -12,10 +12,11 @@
        <br>
 	   </div>
      <div class="inside2">
-   <form [formGroup]="form" novalidate (ngSubmit)="form.valid && showform()" >
+   <form [formGroup]="form" novalidate (ngSubmit)="form.valid" >
     <div formArrayName="answers">
       <div *ngFor="let entry of arrayData; let i=index">{{i+1}}{{". "}}{{entry.english}}{{"-"}}{{entry.arabic}}
          <br> 
+         
             <label class="r1" >1 </label> 
             <label class="r">2 </label>
             <label class="r">3 </label>
@@ -38,7 +39,7 @@
       </div>
     </div>
       <input type="submit" value="Next" [disabled]='!form.valid' (click)="showform()" *ngIf="!finishFlag">
-      <input type="submit" value="Finish Assessment" [disabled]='!form.valid'  (click)="finish()" *ngIf="finishFlag">
+      <input type="submit" value="Finish Assessment"[disabled]='!form.valid'   (click)="finish()" *ngIf="finishFlag">
       
 
   </form>

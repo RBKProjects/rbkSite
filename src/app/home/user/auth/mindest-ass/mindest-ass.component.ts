@@ -25,11 +25,10 @@ export class MindestAssComponent implements OnInit {
   public arrayData=[];
   public dataflag= true;
   private id =localStorage.getItem('user-id');
-  arr = new FormArray([]);
+  arr :any;
   public finishFlag :boolean;
   
   constructor( private testservice : TestService ,private router: Router) {  
-    this.form=new FormGroup({ 'answers': this.arr });
     
     
     
@@ -92,11 +91,9 @@ export class MindestAssComponent implements OnInit {
     console.log(answerArr,"in finish")
     this.testservice.sendanswer({answers:answerArr,finishtest:true}).subscribe(data => {
       if (data){
-        
-          this.router.navigate(['/anaAss']);
-        
-        
-       
+          localStorage.setItem("progress",data.progress)
+
+          this.router.navigate(['/interview']);
         
       }
       else{
@@ -107,6 +104,9 @@ export class MindestAssComponent implements OnInit {
   }
   
   getquestions(){
+    this.arr=new FormArray([])
+    this.form=new FormGroup({ 'answers': this.arr });
+    
     this.testservice.getques().subscribe(data => {
       // if(data.length<1){
       //   this.dataflag= false;
