@@ -1,15 +1,17 @@
 const mongoose = require('mongoose');
 const permissionController = require('./permission/permissionController');
 const express = require('express');
+const env = require('./env.js');
 const app = express();
 var router = express.Router();
 const port = process.env.PORT || 1030;
+app.set('tokenSecret', env.secret); // secret variable for token signiture.
 
 //=============================================================================
 /*								Database									 */
 //=============================================================================
 //const mongoURI = process.env.MONGODB_URI  || 'mongodb://admin:admin@ds111549.mlab.com:11549/rbkadmissions';
- const mongoURI = process.env.MONGODB_URI  || 'mongodb://localhost/rbkSiteSystem';
+const mongoURI = process.env.MONGODB_URI  || 'mongodb://localhost/rbkSiteSystem';
 
 mongoose.connect(mongoURI);
 db = mongoose.connection;
@@ -28,4 +30,3 @@ app.listen(port , function () {
 });
 
 module.exports = app;
-

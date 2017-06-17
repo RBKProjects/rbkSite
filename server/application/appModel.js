@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 
 const AppSchema = new mongoose.Schema({
-  userID {
+  userID : {
     type : mongoose.Schema.Types.ObjectId,
     ref : 'User'
   },
-  testStatus {
+  testStatus : {
     type : String
   },
-  appStatus {
+  appStatus : {
     type : String
   },
-  progress {
+  progress : {
     type : Number
   }
 });
 
 const App = mongoose.model('application', AppSchema);
-modual.exports = App;
+module.exports = App;

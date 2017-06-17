@@ -15,8 +15,8 @@ const Router = express.Router();
     Router.route('/nextSteps/:id').get(User.nextSteps);
     Router.route('/getAll').get(User.getAll);
     Router.route('/isUserLoggedIn').post(User.isUserLoggedIn);
-    
-   
-    	
+
+
+
 
 module.exports = Router;
