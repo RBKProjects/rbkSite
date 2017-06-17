@@ -78,24 +78,29 @@ module.exports = {
 		userModel.findOne({email : req.body.email}, (err, user) => {
 			if (!user) {
 				res.json({isUser : false});
-			}else{
-				if (user.password === req.body.password) {
-					user.isLoggedIn = true;
-					user.save((err, result) => {
-						if (err) {
-							res.status(500).send(err);
-						} else {
-							let token = jwt.encode(user, 'secret');
-							res.setHeader('x-access-token', token);
-							res.json({ token: token, id: user._id, userName: user.firstName + " " + user.lastName,progress:user.progress});
-						}
+			} else {
+				helper.comparePass(req.body.password, user.password, (err, match) => {
+					if (err) {
+						res.status(500).send(err);
+					}
+					else if(!match){
+						res.json({isValidPass : false});
+					} else {
+						appModel.findOne({userID: user._id}, (err, application) => {
+							if(err) {
+								res.status(500).send(err);
+							} else {
+								let token = jwt.sign(user._id, req.app.get('tokenSecret'), {
+									expiresIn : 60*60*24 // expires in 24 hours
+								});
+								res.json({ token: token, id: user._id, userName: user.firstName + " " + user.lastName,progress:application.progress});
+							}
 					});
-				}else{
-					res.json({isValidPass : false});
 				}
-			}
-		})
-	},
+			});
+		}
+	});
+},
 
 	updateUser : (req, res) => {
 		console.log(req.body)
