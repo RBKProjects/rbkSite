@@ -9,9 +9,6 @@ h3{
 .inside2{
 	padding: 37px;
 }
-.con{
-  border:1px solid #778899;
-}
 .col-md-2{
 	text-align: center;
 }
@@ -29,15 +26,23 @@ h3{
    color:#C71585;
    margin-left: 14px;
 }
+.con{
+  border:1px solid #778899;
+}
 input[type='radio'] {
-  -webkit-appearance:none;
+  border:1px solid #C71585;
+  
+  /*-webkit-appearance:none;*/
   width: 15px;
   height: 15px;
-  border:1px solid #C71585;
   border-radius:50%;
   outline:none;
 
 }
+input[type=radio]:checked {
+    background-color: #C71585;
+}
+
 input,label{
   display: inline-block;
   vertical-align: middle;
@@ -49,3 +54,9 @@ p{
 	margin-left: 15px;
 }
 
+
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}

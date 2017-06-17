@@ -13,22 +13,23 @@ const multiChoiceSchema = new mongoose.Schema({
 		type : String,
 		required : true
 	},
-	firstValue : {
-		type : String,
-		required : true
-	},
-	secValue : {
-		type : String,
-		required : true
-	},
-	thirdValue : {
-		type : String,
-		required : true
-	},
-	forthValue : {
-		type : String,
-		required : true
-	},
+	// firstValue : {
+	// 	type : String,
+	// 	required : true
+	// },
+	// secValue : {
+	// 	type : String,
+	// 	required : true
+	// },
+	// thirdValue : {
+	// 	type : String,
+	// 	required : true
+	// },
+	// forthValue : {
+	// 	type : String,
+	// 	required : true
+	// },
+	choices:[],
 	firstValueScore: {
 		type: Number,
 		default: 1

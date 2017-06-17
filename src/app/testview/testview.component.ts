@@ -25,10 +25,10 @@ export class TestviewComponent implements OnInit {
   
   private answers =[];
   public arrayData=[];
- public dataflag= true;
+  public dataflag= true;
   private id =localStorage.getItem('user-id');
   arr = new FormArray([]);
-  
+  public finishFlag :boolean;
   
   constructor( private testservice : TestService) {  
     this.form=new FormGroup({ 'answers': this.arr });
@@ -61,9 +61,9 @@ export class TestviewComponent implements OnInit {
       answerArr.push(y)
     }
     console.log(answerArr)
-        this.testservice.sendanswer({answers:answerArr}).subscribe(data => {
+    this.testservice.sendanswer({answers:answerArr}).subscribe(data => {
       if (data){
-       
+        
         
         
         console.log(data,"done")
@@ -74,17 +74,19 @@ export class TestviewComponent implements OnInit {
         console.log("something went wrong")
       }
     });
-
+    
   }
   
   getquestions(){
     this.testservice.getques().subscribe(data => {
       if(data.length<1){
- this.dataflag= false;
+        this.dataflag= false;
         
       }
       if (data){
-        this.arrayData=data;
+        this.finishFlag=data.finishflag
+
+        this.arrayData=data.arrofQ;
         //// add data to the form 
         this.form=new FormGroup({ 'answers': this.arr });
         for(var i=0; i < this.arrayData.length; i++){
