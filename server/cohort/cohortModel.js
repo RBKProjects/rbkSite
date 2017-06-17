@@ -12,9 +12,6 @@ const CohortSchema = new mongoose.Schema({
 		type : String,
 		//required : true
 	},
-	date : {
-		type : Date
-	},
 	startDate : {
 		type : Date
 	},
@@ -24,11 +21,11 @@ const CohortSchema = new mongoose.Schema({
 	graduationDate : {
 		type : Date,
 	},
-	created_at:{
+	timestamp:{
 		type: Date,
 		default: Date.now
 	}
-	
+
 })
 
 const Cohort = mongoose.model('Cohort', CohortSchema);

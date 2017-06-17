@@ -5,7 +5,7 @@ const TestSchema = new mongoose.Schema({
 		type : String,
 		required : true
 	},
-	createBy : {
+	createdBy : {
 		type : mongoose.Schema.Types.ObjectId,
 		ref : 'Employee'
 	},
