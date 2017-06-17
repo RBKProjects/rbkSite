@@ -10,7 +10,14 @@ export class TestService {
 
 
    getques() { 
-     let params="5934067bea76ce20d0c33641";///here we will put the test id
+     let params;///here we will put the test id
+     
+     if(Number(localStorage.getItem('progress'))==3){
+      params = "5937ffe3d5da9221c05540ac";
+     }else if(Number(localStorage.getItem('progress'))==4) {
+      params = "594043476903a618d4b1bb86";
+      
+     }
       let headers = new Headers();
       headers.append('Content-Type','application/json');
       return this.http.get('api/test/questions/getques/'+ params +"/"+localStorage.getItem('user-id'), {headers: headers})

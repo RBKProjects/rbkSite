@@ -1,4 +1,4 @@
-<div class="container">
+<!--<div class="container">
   <div class="con">
    <div >
   	 <img src="assets/analytical.jpg" class="img-responsive"/>
@@ -39,4 +39,111 @@
 </div>
 
      
+-->
 
+
+    
+<!--
+ <div class="container">
+  <div class="con">
+   <div >
+  	 <img src="assets/analytical.jpg" class="img-responsive"/>
+   </div>
+   <div class="inside">
+	   <div class="col-md-12">
+		   <h3 >Mindset Assessment</h3>
+       <br>
+	   </div>
+     <div class="inside2">
+   <form [formGroup]="form" novalidate (ngSubmit)="form.valid && showform()" >
+    <div formArrayName="answers">
+        <div *ngFor="let entry of arrayData; let i=index">{{i+1}}{{". "}}{{entry.english}}-->
+      
+      <!--<div *ngFor="let entry of arrayData; let i=index">{{i+1}}{{". "}}{{entry.english}}-->
+         <br> 
+           <!--<label *ngFor="let entry.choices of arrayData; let i=index" class="r1" >{{i}} </label> -->
+           <!--<ul>
+<li *ngFor="let x of entry['choices']; let idx = index;"> {{x}}
+</li>
+           </ul>-->
+                <!--<ul>
+
+  <li><label class="r1" attr.for="{{arrayData}}" >{{entry.choices}} </label>
+</li>
+           </ul>
+            -->
+          
+        <!--<br>
+         <div class="x">
+      
+          <fieldset *ngFor="let x of entry['choices']; let i = index;">{{x}}
+      <input type="radio" [formControlName]="i"  value="{answer:x  }" class="radio-inline" >
+             
+                
+          </fieldset>
+
+       </div>
+        
+        <hr>
+      </div>
+  
+      
+  <input type="submit" value="Next" [disabled]='!form.valid' (click)="showform()" *ngIf="!finishFlag">
+      <input type="submit" value="Finish Assessment"   (click)="finish()" *ngIf="finishFlag">
+    </div>
+      
+  </form>
+      
+  
+    </div>
+    </div>
+</div>
+</div>-->
+
+
+<!---->
+<!---->
+
+ <div class="container">
+  <div class="con">
+   <div >
+  	 <img src="assets/analytical.jpg" class="img-responsive"/>
+   </div>
+   <div class="inside">
+	   <div class="col-md-12">
+		   <h3 >analytical Assessment</h3>
+       <br>
+	   </div>
+     <div class="inside2">
+   <!--<form [formGroup]="form" novalidate (ngSubmit)="form.valid " >
+    <div formArrayName="answers">
+      <div *ngFor="let entry of arrayData; let i=index">{{i+1}}{{". "}}{{entry.english}}{{"-"}}{{entry.arabic}}
+         <br> 
+         
+            <label class="r1" >1 </label> 
+            <label class="r">2 </label>
+            <label class="r">3 </label>
+            <label class="r" >4 </label>
+        <br>
+         <div class="x">
+      
+          <fieldset *ngFor="let x of entry['choices']; let n = index;">{{x}}
+      <input type="radio"  formControlName="n"value="{answer:1,QId:{{entry._id}}, userId: {{id}}  }" class="radio-inline" >
+            
+
+          </fieldset>
+
+       </div>
+        
+        <hr>
+      </div>
+    </div>
+      <input type="submit" value="Next" [disabled]='!form.valid' (click)="showform()" *ngIf="!finishFlag">
+      <input type="submit" value="Finish Assessment" [disabled]='!form.valid'  (click)="finish()" *ngIf="finishFlag">
+      
+
+  </form>-->
+    </div>
+    </div>
+</div>
+</div>
