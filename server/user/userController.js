@@ -19,7 +19,6 @@ module.exports = {
 			if (userEX) {
 				res.json({isUserExist : true })
 			} else {
-
 				userModel.create(userData, (err, user)=> {
 					if (err) {
 						res.status(500).send(err);
@@ -58,7 +57,7 @@ module.exports = {
 		userModel.findOne( {_id : req.params.id} ,  (err, user) =>  {
 			if (!user){
 				res.status(500).send("user not found");
-			}else{
+			} else {
 				if (user.emailCode === req.body.emailCode){
 					user.isEmailVerified = true;
 					user.save(function (err, user) {
@@ -179,9 +178,10 @@ module.exports = {
 		userModel.findOne({FbID : req.body.FbID}, (err, user) => {
 			if (!user) {
 				res.json({isUser : false});
-			}else{
-				let token = jwt.encode(user, 'secret');
-				res.setHeader('x-access-token',token);
+			} else {
+				let token = jwt.sign(user._id, req.app.get('tokenSecret'), {
+					expiresIn : 60*60*24 // expires in 24 hours
+				});
 				res.json({token: token, id : user._id, userName : user.firstName + " " + user.lastName});
 			}
 		})
