@@ -17,10 +17,10 @@ export class UpdateInfoComponent implements OnInit {
   public user:object;
   public updateInfo: FormGroup;
   public refugeeFlag = true;
-  
+
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
-  
-  
+
+
   ngOnInit() {
     this.updateInfo = this.formBuilder.group({
       firstName: ['', Validators.required],
@@ -36,24 +36,24 @@ export class UpdateInfoComponent implements OnInit {
       isRefugee: [''],
       gender: ['', Validators.required]},
       );
-      
+
       console.log(this.refugeeFlag,"on init")
-      
+
     }
-    
+
     private genders : string[] = [
     'Female',
     'Male',
     'Other'
     ];
-    
+
     private nationalities : string[] = [
     'Jordanian',
     'Syrian',
     'Palestinian',
     'Other'
     ];
-    
+
     private englishAbility : string[] = [
     '1-No English',
     '2-I can speak & read a little',
@@ -61,7 +61,7 @@ export class UpdateInfoComponent implements OnInit {
     '4-I can have a technical conversation with a native speaker',
     "5-I'm a native speaker"
     ];
-    
+
     private educationLevel : string[] = [
     'Some High School' ,
     'High School Graduate' ,
@@ -70,40 +70,44 @@ export class UpdateInfoComponent implements OnInit {
     'University Graduate (4+ Year Undergraduate Degree) ' ,
     'Masters Degree ', 'PhD ' ,'Other',
     ];
-    
+
     private knowRBK : string[] = [
     'From a Friend', 'Email' , 'Event' ,  'Posters',  'Facebook',  'Web Search (Google, ect.)'];
-    
+
     private codeExperience : string[] = ['Yes' ,'No' ];
     private isRefugee : string[] = ['Yes' ,'No' ]
-    
-    
-    
+
+
+
     updateCandidateInfo(value: Object){
       console.log(value)
-      
-      this.authService.updateInfo(value,localStorage.getItem('user-id')).subscribe(data => {
-        if(data){
-          
-          console.log(data)
-          // this.router.navigate(['/next']);
-          localStorage.setItem("progress",data.progress)
-          this.router.navigate(['/minAss']);
-        }else {
-          this.router.navigate(['/signup']);
-        }
-      });
-      
+
+      this.authService.updateInfo(value,localStorage.getItem('user-id')).subscribe(
+        data => {
+          if(data){
+
+            console.log(data)
+            // this.router.navigate(['/next']);
+            localStorage.setItem("progress",data.progress)
+            this.router.navigate(['/minAss']);
+          }else {
+            this.router.navigate(['/signup']);
+          }
+        },
+        err => {
+          if(err.message === 'No JWT present or has expired'){
+            this.router.navigate(['/']);
+          }
+        });
     }
-    
+
     check(value) {
       if(value ==='0: Jordanian' ){
         this.refugeeFlag=!this.refugeeFlag
       }else if( value ==='1: Syrian' || value ==='2: Palestinian' || value ==='3: Other'){
         this.refugeeFlag=true
-        
+
       }
     }
-    
+
   }
-  

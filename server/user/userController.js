@@ -122,13 +122,20 @@ module.exports = {
 				user.knowRBK = req.body.knowRBK || user.knowRBK;
 				user.codeExperience = req.body.codeExperience || user.codeExperience;
 				user.isRefugee = req.body.isRefugee || user.isRefugee;
-				user.progress=3;
 				user.cohort =user.cohort;
 				user.save((err, savedUser)=>{
 					if(err){
 						res.status(500).send(err);
 					} else {
-						res.json({savedUser:savedUser,progress:user.progress});
+						appModel.findOneAndUpdate({userID: user._id}, {$set: {progress: '3'}}, {new: true}, (err,doc) => {
+							if(err){
+								res.status(500).send(err);
+							}
+           		else {
+								 console.log("Updated");
+								 res.json({savedUser:savedUser,progress:doc.progress});
+							 }
+         	});
 					}
 				});
 			}

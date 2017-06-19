@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TestService } from './test.service';
 
-import {  
-  
-  ReactiveFormsModule,  
-  FormBuilder,  
+import {
+
+  ReactiveFormsModule,
+  FormBuilder,
   FormGroup,
   FormArray,
   FormControl,
-  Validators,  
+  Validators,
 } from '@angular/forms';
 
 @Component({
@@ -20,30 +20,30 @@ import {
 })
 
 export class TestviewComponent implements OnInit {
-  
+
   public form: FormGroup;
-  
+
   private answers =[];
   public arrayData=[];
   public dataflag= true;
   private id =localStorage.getItem('user-id');
   arr = new FormArray([]);
   public finishFlag :boolean;
-  
-  constructor( private testservice : TestService) {  
+
+  constructor( private testservice : TestService, private router : Router) {
     this.form=new FormGroup({ 'answers': this.arr });
-    
-    
-    
+
+
+
   }
-  
-  
-  
+
+
+
   ngOnInit() {
     this.getquestions();
-    
-    
-    
+
+
+
   }
   showform(){
     let answerArr=[];
@@ -57,51 +57,54 @@ export class TestviewComponent implements OnInit {
       y["answer"]=x[1];
       y["QId"]=x[3];
       y["userId"]=this.id;
-      
+
       answerArr.push(y)
     }
     console.log(answerArr)
-    this.testservice.sendanswer({answers:answerArr}).subscribe(data => {
-      if (data){
-        
-        
-        
-        console.log(data,"done")
-        this.getquestions()
-        
-      }
-      else{
-        console.log("something went wrong")
-      }
-    });
-    
-  }
-  
-  getquestions(){
-    this.testservice.getques().subscribe(data => {
-      if(data.length<1){
-        this.dataflag= false;
-        
-      }
-      if (data){
-        this.finishFlag=data.finishflag
+    this.testservice.sendanswer({answers:answerArr}).subscribe(
+      data => {
+        if (data){
+          console.log(data,"done")
+          this.getquestions()
+        }
+        else{
+          console.log("something went wrong")
+        }
+      },
+      err => {
+        if(err.message === 'No JWT present or has expired'){
+          this.router.navigate(['/']);
+        }
+      });
 
-        this.arrayData=data.arrofQ;
-        //// add data to the form 
-        this.form=new FormGroup({ 'answers': this.arr });
-        for(var i=0; i < this.arrayData.length; i++){
-          this.arr.push(new FormControl('', [Validators.required]));
-        } 
-        
-        
-        
-        console.log(this.arrayData,"the array quest")
-        
-        
-      }
-      else{
-        console.log("something went wrong")
-      }
-    });
+  }
+
+  getquestions(){
+    this.testservice.getques().subscribe(
+      data => {
+        if(data.length<1){
+          this.dataflag= false;
+
+        }
+        if (data){
+          this.finishFlag=data.finishflag
+
+          this.arrayData=data.arrofQ;
+          //// add data to the form
+          this.form=new FormGroup({ 'answers': this.arr });
+          for(var i=0; i < this.arrayData.length; i++){
+            this.arr.push(new FormControl('', [Validators.required]));
+          }
+          console.log(this.arrayData,"the array quest");
+        }
+        else{
+          console.log("something went wrong")
+        }
+      },
+      err => {
+        if(err.message === 'No JWT present or has expired'){
+          this.router.navigate(['/']);
+        }
+      });
   }
 }
