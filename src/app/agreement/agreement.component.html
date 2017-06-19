@@ -1,0 +1,28 @@
+
+
+
+<div class="container">
+ <div class="con">
+   <div>
+     <img src="assets/update_info.png" class="img-responsive"/>
+   </div>
+   <div class="container">
+   <div class="inside">
+     <div class="col-md-12">
+       <h3 >Agreement</h3>
+       <br>
+       <h2>Please Agree Our policy To Complete Your Application</h2>
+     </div>
+<div class="form-group"  >
+ <div>
+    <label class="r3">
+        <input type="checkbox" name="isActive" (click)="activate()">
+        I Agree
+    </label>
+</div>
+        <input class="btn btn-default btn-block"  (click)="next()" [disabled]='!isActive' type='submit' value="Next">
+         </div>
+         </div>
+          </div>
+  </div>
+ </div>
