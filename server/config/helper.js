@@ -1,11 +1,11 @@
 const randomstring = require("randomstring");
 const nodemailer = require('nodemailer');
+const bcrypt = require('bcrypt-nodejs');
 
 
 
 module.exports = {
-	
-	
+
 	verify : (to, code)=> {
 		let transporter = nodemailer.createTransport({
 			service: 'gmail',
@@ -14,7 +14,7 @@ module.exports = {
 				pass: 'hackerSpace1.'
 			}
 		});
-		
+
 		let mailOptions = {
 			from: '"RBK ADMISSIONS" <rebootkamp.jo@gmail.com>',
 			to: to,
@@ -26,7 +26,7 @@ module.exports = {
 			'<p>If you are having issues with your account, please don\'t hesitate to contact us by sending email to admissions@rbk.org <br>'+
 			'Looking forward to meeting you! The RBK Team</p>'
 		};
-		
+
 		transporter.sendMail(mailOptions, (error, info) => {
 			if (error) {
 				return console.log(error);
@@ -34,7 +34,7 @@ module.exports = {
 			console.log('Message %s sent: %s', info.messageId, info.response);
 		});
 	},
-	
+
 	nextSteps : (to)=> {
 		let transporter = nodemailer.createTransport({
 			service: 'gmail',
@@ -43,7 +43,7 @@ module.exports = {
 				pass: 'hackerSpace1.'
 			}
 		});
-		
+
 		let mailOptions = {
 			from: '"RBK ADMISSIONS" <rebootkamp.jo@gmail.com>',
 			to: to,
@@ -67,7 +67,7 @@ module.exports = {
 			'<p> حظا سعيدا ودعونا نبدأ</p>!' +
 			'</div>'
 		};
-		
+
 		transporter.sendMail(mailOptions, (error, info) => {
 			if (error) {
 				return console.log(error);
@@ -75,14 +75,14 @@ module.exports = {
 			console.log('Message %s sent: %s', info.messageId, info.response);
 		});
 	},
-	
+
 	randCode : () =>{
 		return randomstring.generate({
 			length : 5,
 			charset : 'numeric'
 		});
 	},
-	
+
 	getNumber : (req, res, key, value)=>{
 		userModel.find({key : value},(err, result)=>{
 			if(err){
@@ -91,6 +91,12 @@ module.exports = {
 				res.json(result.length);
 			}
 		});
+	},
+
+	comparePass : (pass, hash, cb) => {
+		bcrypt.compare(pass, hash, (err, isMatch) => {
+			err ? cb(err,null) : cb (null,isMatch);
+		});
 	}
-	
+
 }
