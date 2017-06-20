@@ -7,14 +7,14 @@ const appModel = require('../application/appModel');
 
 
 module.exports = {
-
+	
 	signup : (req, res) => {
 		let userData  = req.body.user;
 		console.log(userData);
 		cohortModel.findOne({}, {}, { sort: { 'created_at' : -1 } }, function(err, data) {
 			userData["cohort"] = data._id;
 		});
-
+		
 		userModel.findOne({email : userData.email}, (err, userEX)=>{
 			if (userEX) {
 				res.json({isUserExist : true })
@@ -38,7 +38,7 @@ module.exports = {
 			}
 		})
 	},
-
+	
 	isEmailVerified : (req, res)=>{
 		userModel.findOne({_id: req.body.id}, (err, data) => {
 			if (!data) {
@@ -52,7 +52,7 @@ module.exports = {
 			}
 		})
 	},
-
+	
 	verifyUser : (req, res) => {
 		userModel.findOne( {_id : req.params.id} ,  (err, user) =>  {
 			if (!user){
@@ -72,7 +72,7 @@ module.exports = {
 			}
 		});
 	},
-
+	
 	signin : (req, res) => {
 		userModel.findOne({email : req.body.email}, (err, user) => {
 			if (!user) {
@@ -94,13 +94,13 @@ module.exports = {
 								});
 								res.json({ token: token, id: user._id, userName: user.firstName + " " + user.lastName,progress:application.progress});
 							}
-					});
-				}
-			});
-		}
-	});
-},
-
+						});
+					}
+				});
+			}
+		});
+	},
+	
 	updateUser : (req, res) => {
 		console.log(req.body)
 		userModel.findOne({_id : req.params.id }, function(err, user){
@@ -127,84 +127,105 @@ module.exports = {
 					if(err){
 						res.status(500).send(err);
 					} else {
-						appModel.findOneAndUpdate({userID: user._id}, {$set: {progress: '3'}}, {new: true}, (err,doc) => {
+						appModel.findOneAndUpdate({userID: user._id}, {$set: {progress: '2'}}, {new: true}, (err,doc) => {
 							if(err){
 								res.status(500).send(err);
 							}
-           		else {
-								 console.log("Updated");
-								 res.json({savedUser:savedUser,progress:doc.progress});
-							 }
-         	});
+							else {
+								console.log("Updated");
+								res.json({savedUser:savedUser,progress:doc.progress});
+							}
+						});
 					}
 				});
 			}
 		})
 	},
-
-	nextSteps : (req, res)=> {
-		userModel.findOne({_id: req.params.id}, (err, user)=> {
-			if (!user) {
-				res.json("user not found")
-			}else{
-				helper.nextSteps(user.email);
-				res.json("Next step has been sent")
-			}
-		})
-
-	},
-
-	getAll : (req, res)=> {
-		userModel.find({}, (err, user)=>{
-			if (!user) {
-				res.json("user not found")
-			}else{
-				res.json(user);
-			}
-		})
-	},
-
-	facebookSignup : (req, res)=>{
-		let userData  = req.body.user;
-		userModel.findOne({FbID : userData.FbID}, (err, userEX)=>{
-			if (userEX) {
-				res.json({isUserExist : true })
-			}else {
-				userModel.create(userData, (err, data)=> {
-					if (err) {
-						res.status(500).send(err);
-					}else{
-						res.json(data);
-					}
-				});
-			}
-		})
-	},
-
-	facebookLogin :(req, res)=>{
-		userModel.findOne({FbID : req.body.FbID}, (err, user) => {
-			if (!user) {
-				res.json({isUser : false});
-			} else {
-				let token = jwt.sign(user._id, req.app.get('tokenSecret'), {
-					expiresIn : 60*60*24 // expires in 24 hours
-				});
-				res.json({token: token, id : user._id, userName : user.firstName + " " + user.lastName});
-			}
-		})
-	},
-
-	isUserLoggedIn: (req, res) => {
-		userModel.findOne({ _id: req.body.user.id }, (err, result) => {
-			if (!result) {
+	agreed : (req, res) => {
+		console.log(req.body)
+		userModel.findOne({_id : req.body.id }, function(err, user){
+			if(err){
 				res.status(500).send(err);
+			}else if(!user){
+				res.status(500).send(new Error('User does not exist'));
+				
 			} else {
-				if (result.isLoggedIn) {
-					res.json({ isLoggedIn: true });
-				} else {
-					res.json({ isLoggedIn: false });
-				}
+				appModel.findOneAndUpdate({userID: user._id}, {$set: {progress: '3'}}, {new: true}, (err,doc) => {
+					if(err){
+						res.status(500).send(err);
+					}
+					else {
+						console.log("Updated");
+						res.json({progress:doc.progress});
+					}
+				});
 			}
 		});
-	}
+	},
+
+nextSteps : (req, res)=> {
+	userModel.findOne({_id: req.params.id}, (err, user)=> {
+		if (!user) {
+			res.json("user not found")
+		}else{
+			helper.nextSteps(user.email);
+			res.json("Next step has been sent")
+		}
+	})
+	
+},
+
+getAll : (req, res)=> {
+	userModel.find({}, (err, user)=>{
+		if (!user) {
+			res.json("user not found")
+		}else{
+			res.json(user);
+		}
+	})
+},
+
+facebookSignup : (req, res)=>{
+	let userData  = req.body.user;
+	userModel.findOne({FbID : userData.FbID}, (err, userEX)=>{
+		if (userEX) {
+			res.json({isUserExist : true })
+		}else {
+			userModel.create(userData, (err, data)=> {
+				if (err) {
+					res.status(500).send(err);
+				}else{
+					res.json(data);
+				}
+			});
+		}
+	})
+},
+
+facebookLogin :(req, res)=>{
+	userModel.findOne({FbID : req.body.FbID}, (err, user) => {
+		if (!user) {
+			res.json({isUser : false});
+		} else {
+			let token = jwt.sign(user._id, req.app.get('tokenSecret'), {
+				expiresIn : 60*60*24 // expires in 24 hours
+			});
+			res.json({token: token, id : user._id, userName : user.firstName + " " + user.lastName});
+		}
+	})
+},
+
+isUserLoggedIn: (req, res) => {
+	userModel.findOne({ _id: req.body.user.id }, (err, result) => {
+		if (!result) {
+			res.status(500).send(err);
+		} else {
+			if (result.isLoggedIn) {
+				res.json({ isLoggedIn: true });
+			} else {
+				res.json({ isLoggedIn: false });
+			}
+		}
+	});
+}
 }

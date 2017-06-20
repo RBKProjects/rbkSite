@@ -31,6 +31,7 @@ import { ConUserGuard } from './con-user.guard';
 import { UpdateInfoComponent } from './update-info/update-info.component';
 import { ProgressComponent } from './progress/progress.component';
 import { TestService } from './testview/test.service';
+import { AgreementComponent } from './agreement/agreement.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig({
@@ -62,7 +63,9 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 
     UpdateInfoComponent,
 
-    ProgressComponent
+    ProgressComponent,
+
+    AgreementComponent
 
   ],
   imports: [
@@ -89,6 +92,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   // { path: 'test', component: TestviewComponent },
 
  // { path: 'updateinfo', component: UpdateInfoComponent }
+  { path: 'agreement', component: AgreementComponent},// ,canActivate:[ConUserGuard]},
 
   { path: 'updateinfo', component: UpdateInfoComponent ,canActivate:[ConUserGuard]}
 
